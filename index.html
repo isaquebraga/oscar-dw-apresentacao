@@ -153,9 +153,12 @@ code,.code{font-family:var(--f-mono);font-size:.92em;letter-spacing:0}
 .central{font-size:var(--t-small);line-height:1.4;border-left:3px solid var(--gold);padding-left:var(--g1);color:var(--ink)}
 
 /* ---------- Métricas ---------- */
-.formula{display:grid;grid-template-columns:calc(var(--u)*14) 1fr calc(var(--u)*25);gap:var(--g3);align-items:center;border-top:1px solid var(--rule);padding-block:var(--g2)}
+.formula{display:grid;grid-template-columns:calc(var(--u)*19) 1fr calc(var(--u)*24);gap:var(--g3);align-items:center;border-top:1px solid var(--rule);padding-block:var(--g2)}
 .formula:last-child{border-bottom:1px solid var(--rule)}
-.formula .acr{font-size:calc(var(--u)*5)}
+.formula .acr{font-size:calc(var(--u)*4.4)}
+.mname{font-size:var(--t-body);font-weight:700;line-height:1.25;color:var(--ink)}
+.what{font-size:var(--t-body);line-height:1.4;color:var(--ink-2);text-wrap:pretty}
+.what b{color:var(--ink)}
 .frac-wrap{display:flex;align-items:center;gap:var(--g1);font-size:calc(var(--u)*1.45);flex-wrap:wrap}
 .frac{display:inline-grid;text-align:center}
 .frac .n{border-bottom:2px solid var(--ink);padding:0 .5em .22em}
@@ -163,12 +166,27 @@ code,.code{font-family:var(--f-mono);font-size:.92em;letter-spacing:0}
 .times{font-family:var(--f-mono);color:var(--ink-2);white-space:nowrap}
 .dw-ref{display:flex;flex-direction:column;gap:.35em}
 .dw-ref code{font-size:var(--t-small);color:var(--ink);word-break:break-all}
-.support{display:grid;grid-template-columns:repeat(3,1fr);gap:var(--g2) var(--g3)}
-.support li{list-style:none;display:grid;grid-template-columns:calc(var(--u)*2.6) 1fr;gap:var(--g1);border-top:1px solid var(--rule);padding-top:var(--g1)}
-.support .n{font-family:var(--f-display);font-stretch:80%;font-weight:800;font-size:calc(var(--u)*2.2);color:var(--gold);line-height:1}
-.support b{display:block;font-size:var(--t-body);line-height:1.25;margin-bottom:.25em}
-.support span{font-size:var(--t-small);line-height:1.35;color:var(--ink-2)}
-.support ol{margin:0;padding:0;display:contents}
+
+/* ---------- Objetivo: etapas ---------- */
+.steps{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(4,1fr);gap:var(--g3)}
+.steps li{display:flex;flex-direction:column;gap:.3em;border-top:2px solid var(--ink);padding-top:var(--g1)}
+.steps .n{font-family:var(--f-display);font-stretch:80%;font-weight:820;font-size:calc(var(--u)*2.6);color:var(--gold);line-height:1}
+.steps b{font-family:var(--f-display);font-stretch:78%;font-weight:720;font-size:calc(var(--u)*1.9);line-height:1.1}
+.steps span:not(.n){font-size:var(--t-body);line-height:1.4;color:var(--ink-2)}
+
+/* ---------- Bases: colunas usadas ---------- */
+.usage{display:flex;flex-direction:column;gap:calc(var(--u)*.5);border-top:2px solid var(--ink);padding-top:var(--g1)}
+.usage .num{font-size:calc(var(--u)*6.4);color:var(--gold)}
+.usage .of{font-size:.42em;color:var(--ink-2);font-weight:700;letter-spacing:0}
+.units.row{grid-auto-flow:column;grid-auto-columns:calc(var(--u)*1.25);justify-content:start;margin-top:calc(var(--u)*.4)}
+.cols{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:1fr 1fr;gap:calc(var(--u)*.2) var(--g3)}
+.cols li{display:flex;flex-direction:column;gap:.1em;border-top:1px solid var(--rule);padding-block:calc(var(--u)*.5)}
+.cols code{font-size:var(--t-body);font-weight:700;color:var(--ink)}
+.cols span{font-size:var(--t-small);color:var(--ink-2);line-height:1.3}
+
+/* ---------- Passos numerados ---------- */
+.step-h{display:flex;align-items:center;gap:.55em;font-family:var(--f-display);font-stretch:78%;font-weight:720;font-size:calc(var(--u)*1.8);line-height:1.1;border-top:2px solid var(--ink);padding-top:var(--g1);margin-bottom:calc(var(--u)*.3)}
+.step-h span{font-stretch:80%;font-weight:820;color:var(--gold)}
 
 /* ---------- Gráficos em SVG ---------- */
 svg{display:block;width:100%;height:auto;max-width:100%}
@@ -198,13 +216,6 @@ svg{display:block;width:100%;height:auto;max-width:100%}
 .bars .bf.none{background:var(--faint)}
 .bars .bv{font-size:var(--t-small);text-align:right;font-variant-numeric:tabular-nums;color:var(--ink-2)}
 .scale-note{font-family:var(--f-mono);font-size:var(--t-micro);color:var(--ink-3)}
-.key{display:grid;grid-template-columns:calc(var(--u)*1.2) 1fr;gap:var(--g1);align-items:start}
-.key i{display:block;width:calc(var(--u)*1.2);height:calc(var(--u)*1.2);margin-top:.2em}
-.key i.gold{background:var(--gold)}.key i.ink{background:var(--ink)}.key i.slate{background:var(--slate)}
-.key b{display:block;font-size:var(--t-body);margin-bottom:.2em}
-.key p{font-size:var(--t-small);line-height:1.4;color:var(--ink-2)}
-.bracket{border-left:3px solid var(--gold);padding-left:var(--g1);margin-left:calc(var(--g1) * -1 - 3px)}
-.bracket-label{font-family:var(--f-mono);font-size:var(--t-micro);color:var(--gold-deep);font-weight:700;letter-spacing:.06em;text-transform:uppercase;margin-bottom:calc(var(--u)*.4)}
 
 /* ---------- Tabelas ---------- */
 .tbl{overflow:auto;min-height:0}
@@ -221,16 +232,12 @@ tr.hl td{background:var(--gold-wash)}
 .pk,.fk{display:inline-block;font-family:var(--f-mono);font-size:.78em;font-weight:700;padding:.08em .38em;margin-right:.3em;letter-spacing:.04em}
 .pk{background:var(--gold);color:#fff}
 .fk{border:1px solid var(--ink);color:var(--ink)}
-.dict tr[data-uso="nao"]{display:none}
-.dict.show-all tr[data-uso="nao"]{display:table-row}
-.dict.show-all td{padding-block:calc(var(--u)*.26)}
-.dict{font-size:calc(var(--u)*1.3)}
-.dict.show-all{font-size:calc(var(--u)*1.0)}
-.dict tr[data-uso="nao"] td{color:var(--ink-3)}
-.dict tr[data-uso="nao"] td.c::after{content:"não usado";margin-left:.6em;font-size:.72em;font-weight:700;color:var(--alert);letter-spacing:.04em}
-.btn{cursor:pointer;background:var(--plate);border:1px solid var(--ink);padding:.45em .9em;font-family:var(--f-mono);font-size:var(--t-micro);font-weight:700;letter-spacing:.04em;min-height:36px;transition:background .15s,color .15s}
-.btn:hover{background:var(--ink);color:var(--paper)}
-.btn[aria-pressed="true"]{background:var(--ink);color:var(--paper)}
+.ddt{font-family:var(--f-mono);font-weight:700;font-size:calc(var(--u)*1.55);line-height:1.1}
+.ddt code{font-size:1em}
+.dd{border-top:2px solid var(--ink)}
+.dd td{color:var(--ink-2)}
+.dd td.c{color:var(--ink);width:1%}
+.dd-narrow td.c{font-size:.92em}
 :focus-visible{outline:3px solid var(--gold);outline-offset:2px}
 
 .jump{display:flex;gap:calc(var(--u)*.4);flex-wrap:wrap}
@@ -268,6 +275,10 @@ tr.hl td{background:var(--gold-wash)}
 .join .line::after{content:"";position:absolute;right:-1px;top:-5px;border:6px solid transparent;border-left-color:var(--ink);border-right:0}
 .join .keytxt{font-size:var(--t-body)}
 .join .keytxt code{font-weight:700}
+.join4{grid-template-columns:calc(var(--u)*15) 1fr calc(var(--u)*15) calc(var(--u)*21);padding-block:var(--g1)}
+.join-head{border-top:0;padding-block:0 calc(var(--u)*.3)}
+.join .gain{font-size:var(--t-small);line-height:1.35;color:var(--ink-2);border-left:3px solid var(--gold);padding-left:var(--g1)}
+.join .gain code{display:block;margin-top:.3em;font-weight:700;color:var(--ink)}
 
 .pill-row{display:flex;gap:calc(var(--u)*.5);flex-wrap:wrap}
 
@@ -297,10 +308,11 @@ tr.hl td{background:var(--gold-wash)}
   .stage{--u:11px;width:auto;aspect-ratio:auto;overflow:visible}
   .slide{position:static;display:flex;padding:40px 16px 44px;border-bottom:1px solid var(--rule-strong);animation:none!important}
   .chrome{display:none}
-  .c2,.c3,.c4,.c75,.c57,.c64,.c46,.support{grid-template-columns:1fr}
+  .c2,.c3,.c4,.c75,.c57,.c64,.c46,.steps{grid-template-columns:1fr}
   .formula{grid-template-columns:1fr}
   .join{grid-template-columns:1fr}
-  .join .line{display:none}
+  .join .line,.join-head{display:none}
+  .units.row{grid-auto-columns:14px}
   .cover-title{font-size:58px}
   .cover{min-height:80vh}
   .head-row{flex-direction:column;align-items:flex-start}
@@ -317,7 +329,7 @@ tr.hl td{background:var(--gold-wash)}
   .deck{display:block;min-height:0}
   .stage{width:13.333in;aspect-ratio:auto;overflow:visible}
   .slide{position:relative;display:flex!important;height:7.5in;break-after:page;page-break-after:always;animation:none!important;overflow:hidden}
-  .chrome,.btn,.jump{display:none!important}
+  .chrome,.jump{display:none!important}
 }
 </style>
 
@@ -341,81 +353,22 @@ tr.hl td{background:var(--gold-wash)}
   </p>
 </section>
 
-<!-- ===================== INTRODUÇÃO ===================== -->
-<section class="slide" id="intro" data-section="Introdução" aria-label="Introdução">
+<!-- ===================== OBJETIVO ===================== -->
+<section class="slide" id="objetivo" data-section="Objetivo" aria-label="Objetivo">
   <div class="head">
-    <p class="eyebrow">Introdução</p>
-    <h2 class="h">Por que estudar o Oscar com um Data Warehouse</h2>
+    <p class="eyebrow">Objetivo do trabalho</p>
   </div>
-  <div class="grid c4 fill center-y">
-    <div class="point">
-      <p class="label">Relevância</p>
-      <h3>Quase um século de registros</h3>
-      <p>Concedido pela Academia desde 1929, com categorias relativamente estáveis e registros de acesso público.</p>
-    </div>
-    <div class="point">
-      <p class="label">Lacuna</p>
-      <h3>Fatores discutidos, não apurados</h3>
-      <p>A crítica discute indicações, premiações precursoras, gênero e histórico do indicado, sem apurá-los sobre a série histórica completa.</p>
-    </div>
-    <div class="point">
-      <p class="label">Desafio de dados</p>
-      <h3>Fontes sem chave única</h3>
-      <p>Múltiplas fontes heterogêneas exigem tratamento de qualidade de dados e modelagem dimensional.</p>
-    </div>
-    <div class="point">
-      <p class="label">Viabilidade</p>
-      <h3>Quatro bases públicas</h3>
-      <p>Bases do Kaggle integradas em um DW Star Schema, no grão da indicação individual, sem reprocessar as fontes a cada pergunta.</p>
-    </div>
-  </div>
-</section>
-
-<section class="slide" id="objetivo" data-section="Introdução" aria-label="Objetivos">
-  <div class="head">
-    <p class="eyebrow">Objetivo geral</p>
-  </div>
-  <p class="quote">Construir um banco de dados analítico do histórico de indicações e premiações do Oscar, integrando <em>dados de premiações</em>, <em>características cinematográficas</em> e <em>perfil demográfico dos vencedores</em>, a fim de identificar fatores associados à vitória e caracterizar a evolução do perfil dos premiados ao longo do tempo.</p>
-  <div class="stack fill" style="justify-content:flex-end">
-    <p class="label">Objetivos específicos</p>
-    <ul class="list-plain c4" style="display:grid">
-      <li>Levantamento estrutural das bases e dos problemas de qualidade</li>
-      <li>Modelagem do DW em Star Schema</li>
-      <li>Análise exploratória dos dados</li>
-      <li>ETL para normalização, disponibilidade e precisão</li>
-      <li>Implantação no Oracle: tablespaces, sequências, restrições e índices</li>
-      <li>Consultas analíticas: precursoras × vitória, perfil demográfico</li>
-      <li>Dashboards sobre as métricas avaliadas</li>
-      <li>Modelagem com grafos para as mesmas perguntas</li>
-    </ul>
-  </div>
-</section>
-
-<!-- ===================== TEMA ===================== -->
-<section class="slide" id="tema" data-section="Tema" aria-label="Tema">
-  <div class="head">
-    <p class="eyebrow">Tema</p>
-    <h2 class="h">Uma finalidade dupla</h2>
-  </div>
-  <div class="grid c2 fill center-y">
+  <div class="stack fill" style="justify-content:center;gap:var(--g4)">
+    <p class="quote" style="font-size:calc(var(--u)*3);max-width:calc(var(--u)*72)">Construir um Data Warehouse com o histórico do Oscar para descobrir <em>o que está associado à vitória</em> e <em>como o perfil dos premiados mudou</em> ao longo do tempo.</p>
     <div class="stack-s">
-      <p class="num" style="font-size:calc(var(--u)*5.2)">Antecipar</p>
-      <p class="body" style="font-size:var(--t-lead);max-width:calc(var(--u)*38)">Identificar os fatores com maior poder de antecipação da vitória em <b>Melhor Filme</b>.</p>
+    <p class="label">Como chegamos lá</p>
+    <ol class="steps">
+      <li><span class="n">1</span><b>Levantar e tratar</b><span>as quatro bases públicas e seus problemas de qualidade</span></li>
+      <li><span class="n">2</span><b>Modelar e implantar</b><span>o DW em Star Schema no Oracle</span></li>
+      <li><span class="n">3</span><b>Consultar</b><span>as perguntas de negócio e montar os dashboards</span></li>
+      <li><span class="n">4</span><b>Comparar</b><span>com uma modelagem em grafos para as mesmas perguntas</span></li>
+    </ol>
     </div>
-    <div class="stack-s">
-      <p class="num" style="font-size:calc(var(--u)*5.2)">Caracterizar</p>
-      <p class="body" style="font-size:var(--t-lead);max-width:calc(var(--u)*40)">Descrever a evolução do perfil dos vencedores: <b>gênero cinematográfico</b>, <b>representatividade étnico-racial</b> e <b>participação feminina</b>.</p>
-    </div>
-  </div>
-  <div class="stack-s ruled">
-    <div class="head-row">
-      <p class="label">Categorias no escopo do projeto</p>
-      <p class="src">DIM_CATEGORIA.STA_CATEGORIA_ESCOPO = 1</p>
-    </div>
-    <div class="pill-row">
-      <span class="chip ink">Melhor Filme</span><span class="chip ink">Melhor Ator</span><span class="chip ink">Melhor Atriz</span><span class="chip ink">Melhor Direção</span><span class="chip ink">Melhor Filme de Animação</span>
-    </div>
-    <p class="small">As janelas temporais das perguntas partem de 1950 e respeitam a cobertura de cada base.</p>
   </div>
 </section>
 
@@ -539,39 +492,30 @@ tr.hl td{background:var(--gold-wash)}
   </div>
   <div class="fill" style="display:flex;flex-direction:column;justify-content:center">
     <div class="formula">
-      <div><p class="num acr">TAA</p><p class="micro">Meta 1</p></div>
-      <div class="frac-wrap"><span class="frac"><span class="n">cerimônias com antecipação correta</span><span class="d">total de cerimônias analisadas</span></span><span class="times">× 100</span></div>
-      <div class="dw-ref"><span class="micro">Fator central no DW</span><code>FAT_INDICACAO_OSCAR<br>.QTD_INDICACOES_FILME</code></div>
+      <div class="stack-s"><p class="num acr">TAA</p><p class="mname">Taxa de Acerto na Antecipação</p><p class="micro">Meta 1 · Melhor Filme · 1950–2020</p></div>
+      <div class="stack-s">
+        <p class="what">Em quantas cerimônias, de cada 100, conseguimos apontar o vencedor de Melhor Filme <b>antes do anúncio</b>.</p>
+        <div class="frac-wrap"><span class="frac"><span class="n">cerimônias com antecipação correta</span><span class="d">total de cerimônias analisadas</span></span><span class="times">× 100</span></div>
+      </div>
+      <div class="dw-ref"><span class="micro">Fator central no DW</span><code>FAT_INDICACAO_OSCAR<br>.QTD_INDICACOES_FILME</code><span class="small">nº de indicações do filme na cerimônia — a regra simples acerta <b class="strong">51,9%</b></span></div>
     </div>
     <div class="formula">
-      <div><p class="num acr">PGND</p><p class="micro">Meta 2</p></div>
-      <div class="frac-wrap"><span class="frac"><span class="n">vencedores de gêneros não dramáticos</span><span class="d">total de vencedores da categoria</span></span><span class="times">× 100</span></div>
-      <div class="dw-ref"><span class="micro">Sustentada no DW por</span><code>DIM_FILME<br>.STA_GENERO_DRAMATICO</code></div>
+      <div class="stack-s"><p class="num acr">PGND</p><p class="mname">Participação de Gêneros Não Dramáticos</p><p class="micro">Meta 2 · Melhor Filme · por década</p></div>
+      <div class="stack-s">
+        <p class="what">Quantos vencedores de Melhor Filme <b>não são dramas</b> — e como essa fatia muda de uma década para outra.</p>
+        <div class="frac-wrap"><span class="frac"><span class="n">vencedores de gêneros não dramáticos</span><span class="d">total de vencedores da categoria</span></span><span class="times">× 100</span></div>
+      </div>
+      <div class="dw-ref"><span class="micro">Sustentada no DW por</span><code>DIM_FILME<br>.STA_GENERO_DRAMATICO</code><span class="small">1 quando o gênero principal do filme (TMDB) é Drama</span></div>
     </div>
     <div class="formula">
-      <div><p class="num acr">PVNB</p><p class="micro">Meta 3</p></div>
-      <div class="frac-wrap"><span class="frac"><span class="n">vencedores não brancos</span><span class="d">total de vencedores das categorias analisadas</span></span><span class="times">× 100</span></div>
-      <div class="dw-ref"><span class="micro">Sustentada no DW por</span><code>DIM_PESSOA<br>.STA_ETNIA_NAO_BRANCA</code></div>
+      <div class="stack-s"><p class="num acr">PVNB</p><p class="mname">Participação de Vencedores Não Brancos</p><p class="micro">Meta 3 · Ator, Atriz, Direção · 1950–2014</p></div>
+      <div class="stack-s">
+        <p class="what">De cada 100 vencedores de atuação e direção, <b>quantos são profissionais não brancos</b>.</p>
+        <div class="frac-wrap"><span class="frac"><span class="n">vencedores não brancos</span><span class="d">total de vencedores das categorias analisadas</span></span><span class="times">× 100</span></div>
+      </div>
+      <div class="dw-ref"><span class="micro">Sustentada no DW por</span><code>DIM_PESSOA<br>.STA_ETNIA_NAO_BRANCA</code><span class="small">1 quando a classificação é distinta de White — hoje, <b class="strong">4,8%</b></span></div>
     </div>
   </div>
-</section>
-
-<section class="slide" id="apoio" data-section="Métricas" aria-label="Métricas de apoio">
-  <div class="head">
-    <p class="eyebrow">Métricas de apoio</p>
-    <h2 class="h">Nove métricas complementam a investigação</h2>
-  </div>
-  <ol class="support fill center-y" style="margin:0;padding:0">
-    <li><span class="n">1</span><div><b>Conversão de indicações em vitórias</b><span>vitórias ÷ indicações, por filme ou profissional × 100</span></div></li>
-    <li><span class="n">2</span><div><b>Indicações anteriores acumuladas</b><span>por profissional, até cada cerimônia</span></div></li>
-    <li><span class="n">3</span><div><b>Coincidência com premiações precursoras</b><span>vencedor da precursora que também venceu o Oscar na mesma categoria canônica</span></div></li>
-    <li><span class="n">4</span><div><b>Participação feminina em Melhor Direção</b><span>indicações a mulheres ÷ total de indicações da categoria × 100</span></div></li>
-    <li><span class="n">5</span><div><b>Idade média dos vencedores</b><span>ano da premiação − ano de nascimento, por categoria e década</span></div></li>
-    <li><span class="n">6</span><div><b>Vencedores nascidos no exterior</b><span>nascidos fora dos EUA ÷ total de vencedores × 100</span></div></li>
-    <li><span class="n">7</span><div><b>Produções em idioma não inglês</b><span>entre indicados e vencedores, por década</span></div></li>
-    <li><span class="n">8</span><div><b>Diferencial de recepção do público</b><span>nota do vencedor − média dos demais indicados da cerimônia, ponderada por votos</span></div></li>
-    <li><span class="n">9</span><div><b>Acurácia do modelo de classificação</b><span>na previsão dos vencedores, apurada na mineração de dados</span></div></li>
-  </ol>
 </section>
 
 <!-- ===================== BASES ===================== -->
@@ -621,163 +565,165 @@ tr.hl td{background:var(--gold-wash)}
   </div>
 </section>
 
-<section class="slide" id="base-oscar" data-section="Bases" aria-label="Dicionário The Oscar Award">
+<section class="slide" id="base-oscar" data-section="Bases" aria-label="Base The Oscar Award">
   <div class="head">
     <div class="head-row">
-      <p class="eyebrow">Base 1 de 4 · dicionário de dados</p>
+      <p class="eyebrow">Base 1 de 4</p>
       <div class="jump" data-jump-group="bases"></div>
     </div>
     <h2 class="h">The Oscar Award, 1927–2026</h2>
-    <div class="head-row">
-      <p class="small"><b class="strong">12.137 registros · 14 colunas · 98 cerimônias.</b> Registro oficial da Academia; fornece a variável resposta (vitória). Fonte adotada: <code>full_data.csv</code>.</p>
-      <button class="btn" type="button" id="tg-oscar" data-toggle-all aria-controls="d-oscar" aria-pressed="false">Mostrar não usados (3)</button>
+    <p class="lead">Registro oficial da Academia: cada linha é uma indicação. É a base central e traz a variável resposta, se a indicação venceu ou não.</p>
+  </div>
+  <div class="grid c2 fill center-y">
+    <div class="stack">
+      <div class="stats c2" style="display:grid">
+        <div class="stat"><span class="v">12.137</span><span class="k">registros</span></div>
+        <div class="stat"><span class="v">98</span><span class="k">cerimônias</span></div>
+      </div>
+      <div class="usage">
+        <p class="num">11<span class="of"> de 14</span></p>
+        <p class="small">colunas usadas no projeto</p>
+        <div class="units row" data-units="14" data-on="11" role="img" aria-label="11 de 14 colunas usadas"></div>
+      </div>
+    </div>
+    <div class="stack-s">
+      <p class="label">Colunas usadas</p>
+      <ul class="cols">
+        <li><code>Ceremony</code><span>nº da cerimônia</span></li>
+        <li><code>Year</code><span>ano dos filmes</span></li>
+        <li><code>Class</code><span>grupo da categoria</span></li>
+        <li><code>CanonicalCategory</code><span>categoria padronizada</span></li>
+        <li><code>Category</code><span>nome oficial da categoria</span></li>
+        <li><code>Film</code><span>título do filme</span></li>
+        <li><code>FilmId</code><span>ID IMDb do filme</span></li>
+        <li><code>Nominees</code><span>nomes dos indicados</span></li>
+        <li><code>NomineeIds</code><span>IDs IMDb dos indicados</span></li>
+        <li><code>Winner</code><span>venceu ou não</span></li>
+        <li><code>Detail</code><span>personagem, canção etc.</span></li>
+      </ul>
     </div>
   </div>
-  <div class="tbl fill">
-    <table class="dict" id="d-oscar">
-      <thead><tr><th>Campo</th><th>Descrição</th><th>Tipo</th><th>Valores possíveis</th></tr></thead>
-      <tbody>
-        <tr><td class="c">Ceremony</td><td>Número ordinal da cerimônia</td><td class="t">Inteiro</td><td>1 a 98</td></tr>
-        <tr><td class="c">Year</td><td>Ano dos filmes homenageados</td><td class="t">Inteiro</td><td>1927 a 2025</td></tr>
-        <tr><td class="c">Class</td><td>Agrupamento funcional da categoria</td><td class="t">Texto</td><td>Production, Title, Acting, Directing e outros</td></tr>
-        <tr><td class="c">CanonicalCategory</td><td>Nome padronizado da categoria</td><td class="t">Texto</td><td>BEST PICTURE, DIRECTING, ACTOR, ACTRESS e outros</td></tr>
-        <tr><td class="c">Category</td><td>Nome oficial da categoria na cerimônia</td><td class="t">Texto</td><td>Variações históricas de nomenclatura</td></tr>
-        <tr><td class="c">Film</td><td>Título do filme indicado</td><td class="t">Texto</td><td>Títulos; nulo em 11% dos registros</td></tr>
-        <tr><td class="c">FilmId</td><td>Identificador IMDb do filme</td><td class="t">Texto</td><td>Padrão tt0000000; nulo em 11%</td></tr>
-        <tr data-uso="nao"><td class="c">Name</td><td>Texto oficial da indicação</td><td class="t">Texto</td><td>Texto livre; nulo em 10%</td></tr>
-        <tr><td class="c">Nominees</td><td>Nomes dos indicados, separados por vírgula</td><td class="t">Texto</td><td>Nomes; nulo em 3%</td></tr>
-        <tr><td class="c">NomineeIds</td><td>Identificadores IMDb dos indicados</td><td class="t">Texto</td><td>Padrão nm0000000 ou interrogação; nulo em 7%</td></tr>
-        <tr><td class="c">Winner</td><td>Indicador de vitória</td><td class="t">Booleano</td><td>Verdadeiro (3.515) ou nulo (8.622)</td></tr>
-        <tr><td class="c">Detail</td><td>Detalhe da indicação</td><td class="t">Texto</td><td>Personagem, canção e outros; nulo em 74%</td></tr>
-        <tr data-uso="nao"><td class="c">Note</td><td>Observação sobre a indicação</td><td class="t">Texto</td><td>Texto livre; nulo em 95%</td></tr>
-        <tr data-uso="nao"><td class="c">Citation</td><td>Texto oficial da premiação</td><td class="t">Texto</td><td>Texto livre; nulo em 90%</td></tr>
-      </tbody>
-    </table>
-  </div>
-  <p class="src">Quadro 1 · elaborado pelos autores com base em Raphael Fontes (2026) · kaggle.com/datasets/unanimad/the-oscar-award</p>
+  <p class="src">Raphael Fontes (2026) · kaggle.com/datasets/unanimad/the-oscar-award · arquivo full_data.csv</p>
 </section>
 
-<section class="slide" id="base-imdb" data-section="Bases" aria-label="Dicionário Film Awards">
+<section class="slide" id="base-imdb" data-section="Bases" aria-label="Base Film Awards">
   <div class="head">
     <div class="head-row">
-      <p class="eyebrow">Base 2 de 4 · dicionário de dados</p>
+      <p class="eyebrow">Base 2 de 4</p>
       <div class="jump" data-jump-group="bases"></div>
     </div>
     <h2 class="h">Film Awards (IMDb)</h2>
-    <div class="head-row">
-      <p class="small"><b class="strong">2.158.525 registros · 21 colunas · 502.469 identificadores.</b> Premiações catalogadas pelo IMDb, inclusive de TV; mede o desempenho em cerimônias anteriores ao Oscar.</p>
-      <button class="btn" type="button" id="tg-imdb" data-toggle-all aria-controls="d-imdb" aria-pressed="false">Mostrar não usados (12)</button>
+    <p class="lead">Todas as premiações catalogadas pelo IMDb, inclusive de TV. Serve para medir como os filmes foram nas premiações que acontecem antes do Oscar.</p>
+  </div>
+  <div class="grid c2 fill center-y">
+    <div class="stack">
+      <div class="stats c2" style="display:grid">
+        <div class="stat"><span class="v">2.158.525</span><span class="k">registros</span></div>
+        <div class="stat"><span class="v">1886–2020</span><span class="k">período</span></div>
+      </div>
+      <div class="usage">
+        <p class="num">9<span class="of"> de 21</span></p>
+        <p class="small">colunas usadas no projeto</p>
+        <div class="units row" data-units="21" data-on="9" role="img" aria-label="9 de 21 colunas usadas"></div>
+      </div>
+    </div>
+    <div class="stack-s">
+      <p class="label">Colunas usadas</p>
+      <ul class="cols">
+        <li><code>eventId</code><span>ID do evento</span></li>
+        <li><code>eventName</code><span>nome do evento</span></li>
+        <li><code>year</code><span>ano do evento</span></li>
+        <li><code>categoryName</code><span>categoria</span></li>
+        <li><code>name</code><span>nome do indicado</span></li>
+        <li><code>const</code><span>ID IMDb do indicado</span></li>
+        <li><code>isWinner</code><span>venceu ou não</span></li>
+        <li><code>isPerson</code><span>indicado é uma pessoa</span></li>
+        <li><code>isTitle</code><span>indicado é uma obra</span></li>
+      </ul>
     </div>
   </div>
-  <div class="tbl fill">
-    <table class="dict" id="d-imdb">
-      <thead><tr><th>Campo</th><th>Descrição</th><th>Tipo</th><th>Valores possíveis</th></tr></thead>
-      <tbody>
-        <tr><td class="c">eventId</td><td>Identificador do evento de premiação</td><td class="t">Texto</td><td>Padrão ev0000000</td></tr>
-        <tr><td class="c">eventName</td><td>Nome do evento de premiação</td><td class="t">Texto</td><td>Academy Awards, Golden Globes e outros</td></tr>
-        <tr data-uso="nao"><td class="c">awardName</td><td>Nome do prêmio concedido</td><td class="t">Texto</td><td>Oscar, Golden Globe e outros</td></tr>
-        <tr><td class="c">year</td><td>Ano do evento</td><td class="t">Inteiro</td><td>1886 a 2020</td></tr>
-        <tr data-uso="nao"><td class="c">occurrence</td><td>Ocorrência do evento no ano</td><td class="t">Inteiro</td><td>1 a 12</td></tr>
-        <tr data-uso="nao"><td class="c">winAnnouncementTime</td><td>Instante do registro do anúncio</td><td class="t">Inteiro</td><td>Marca temporal Unix</td></tr>
-        <tr><td class="c">categoryName</td><td>Nome da categoria do evento</td><td class="t">Texto</td><td>Best Film e outros; nulo em 11%</td></tr>
-        <tr data-uso="nao"><td class="c">nomeneeNote</td><td>Observação sobre o indicado</td><td class="t">Texto</td><td>Texto livre; nulo em 83%</td></tr>
-        <tr><td class="c">name</td><td>Nome do indicado</td><td class="t">Texto</td><td>468.097 valores distintos</td></tr>
-        <tr data-uso="nao"><td class="c">originalName</td><td>Nome original do indicado</td><td class="t">Texto</td><td>Texto livre; nulo em 91%</td></tr>
-        <tr data-uso="nao"><td class="c">songNames</td><td>Canções associadas à indicação</td><td class="t">Texto</td><td>Nulo em 99%</td></tr>
-        <tr data-uso="nao"><td class="c">episodeNames</td><td>Episódios associados à indicação</td><td class="t">Texto</td><td>Nulo em 97%</td></tr>
-        <tr data-uso="nao"><td class="c">characterNames</td><td>Personagens associados à indicação</td><td class="t">Texto</td><td>Nulo em 100%</td></tr>
-        <tr><td class="c">isWinner</td><td>Indicador de vitória</td><td class="t">Booleano</td><td>Verdadeiro (942.963) ou falso (1.214.777)</td></tr>
-        <tr data-uso="nao"><td class="c">isPrimary</td><td>Indicador de indicação principal</td><td class="t">Booleano</td><td>Verdadeiro (988.970) ou falso (1.164.538)</td></tr>
-        <tr data-uso="nao"><td class="c">isSecondary</td><td>Indicador de indicação secundária</td><td class="t">Booleano</td><td>Verdadeiro (1.164.538) ou falso (988.970)</td></tr>
-        <tr><td class="c">isPerson</td><td>Indicador de indicado pessoa física</td><td class="t">Booleano</td><td>Verdadeiro (1.247.606) ou falso (910.919)</td></tr>
-        <tr><td class="c">isTitle</td><td>Indicador de indicado obra</td><td class="t">Booleano</td><td>Verdadeiro (1.253.429) ou falso (905.096)</td></tr>
-        <tr data-uso="nao"><td class="c">isCompany</td><td>Indicador de indicado pessoa jurídica</td><td class="t">Booleano</td><td>Verdadeiro (806) ou falso (2.157.719)</td></tr>
-        <tr><td class="c">const</td><td>Identificador IMDb do indicado</td><td class="t">Texto</td><td>502.469 valores distintos</td></tr>
-        <tr data-uso="nao"><td class="c">notes</td><td>Observações gerais</td><td class="t">Texto</td><td>Texto livre; nulo em 88%</td></tr>
-      </tbody>
-    </table>
-  </div>
-  <p class="src">Quadro 2 · elaborado pelos autores com base em ABab (2026) · kaggle.com/datasets/iwooloowi/film-awards-imdb</p>
+  <p class="src">ABab (2026) · kaggle.com/datasets/iwooloowi/film-awards-imdb</p>
 </section>
 
-<section class="slide" id="base-tmdb" data-section="Bases" aria-label="Dicionário TMDB Metadata">
+<section class="slide" id="base-tmdb" data-section="Bases" aria-label="Base TMDB Metadata">
   <div class="head">
     <div class="head-row">
-      <p class="eyebrow">Base 3 de 4 · dicionário de dados</p>
+      <p class="eyebrow">Base 3 de 4</p>
       <div class="jump" data-jump-group="bases"></div>
     </div>
     <h2 class="h">Oscar Nominees and Winners with TMDB Metadata</h2>
-    <div class="head-row">
-      <p class="small"><b class="strong">5.199 registros · 19 colunas.</b> Gênero, idioma original e recepção do público, no nível do filme. Sem ID IMDb: apenas <code>id_tmdb</code>.</p>
-      <button class="btn" type="button" id="tg-tmdb" data-toggle-all aria-controls="d-tmdb" aria-pressed="false">Mostrar não usados (8)</button>
+    <p class="lead">Atributos de cada filme indicado: gênero, idioma original e recepção do público.</p>
+  </div>
+  <div class="grid c2 fill center-y">
+    <div class="stack">
+      <div class="stats c2" style="display:grid">
+        <div class="stat"><span class="v">5.199</span><span class="k">registros</span></div>
+        <div class="stat"><span class="v">1929–2025</span><span class="k">cerimônias cobertas</span></div>
+      </div>
+      <div class="usage">
+        <p class="num">11<span class="of"> de 19</span></p>
+        <p class="small">colunas usadas no projeto</p>
+        <div class="units row" data-units="19" data-on="11" role="img" aria-label="11 de 19 colunas usadas"></div>
+      </div>
+    </div>
+    <div class="stack-s">
+      <p class="label">Colunas usadas</p>
+      <ul class="cols">
+        <li><code>film</code><span>título do filme</span></li>
+        <li><code>year_film</code><span>ano do filme</span></li>
+        <li><code>decade_film</code><span>década do filme</span></li>
+        <li><code>year_ceremony</code><span>ano da cerimônia</span></li>
+        <li><code>id_tmdb</code><span>ID no TMDB</span></li>
+        <li><code>genres</code><span>gêneros do filme</span></li>
+        <li><code>original_language</code><span>idioma original</span></li>
+        <li><code>release_date</code><span>data de lançamento</span></li>
+        <li><code>vote_average</code><span>nota do público</span></li>
+        <li><code>vote_count</code><span>nº de votos</span></li>
+        <li><code>popularity</code><span>popularidade</span></li>
+      </ul>
     </div>
   </div>
-  <div class="tbl fill">
-    <table class="dict" id="d-tmdb">
-      <thead><tr><th>Campo</th><th>Descrição</th><th>Tipo</th><th>Valores possíveis</th></tr></thead>
-      <tbody>
-        <tr><td class="c">film</td><td>Título do filme</td><td class="t">Texto</td><td>Títulos dos filmes indicados</td></tr>
-        <tr><td class="c">year_film</td><td>Ano de lançamento do filme</td><td class="t">Inteiro</td><td>1927 a 2024</td></tr>
-        <tr><td class="c">decade_film</td><td>Década de lançamento do filme</td><td class="t">Inteiro</td><td>1920 a 2020</td></tr>
-        <tr><td class="c">year_ceremony</td><td>Ano da cerimônia</td><td class="t">Inteiro</td><td>1929 a 2025</td></tr>
-        <tr data-uso="nao"><td class="c">oscars_won</td><td>Total de estatuetas conquistadas pelo filme</td><td class="t">Inteiro</td><td>Zero ou mais</td></tr>
-        <tr data-uso="nao"><td class="c">adult</td><td>Indicador de conteúdo adulto</td><td class="t">Booleano</td><td>Verdadeiro ou falso</td></tr>
-        <tr data-uso="nao"><td class="c">backdrop_path</td><td>Caminho da imagem de fundo no TMDB</td><td class="t">Texto</td><td>Caminho de arquivo</td></tr>
-        <tr><td class="c">id_tmdb</td><td>Identificador do filme no TMDB</td><td class="t">Inteiro</td><td>Identificador numérico</td></tr>
-        <tr><td class="c">original_language</td><td>Idioma original da produção</td><td class="t">Texto</td><td>Códigos ISO 639-1 (en, fr, ko e outros)</td></tr>
-        <tr data-uso="nao"><td class="c">original_title</td><td>Título no idioma original</td><td class="t">Texto</td><td>Títulos</td></tr>
-        <tr data-uso="nao"><td class="c">overview</td><td>Sinopse do filme</td><td class="t">Texto</td><td>Texto livre</td></tr>
-        <tr><td class="c">popularity</td><td>Índice de popularidade no TMDB</td><td class="t">Decimal</td><td>Valores positivos</td></tr>
-        <tr data-uso="nao"><td class="c">poster_path</td><td>Caminho do cartaz no TMDB</td><td class="t">Texto</td><td>Caminho de arquivo</td></tr>
-        <tr><td class="c">release_date</td><td>Data de lançamento</td><td class="t">Data</td><td>Datas de lançamento</td></tr>
-        <tr data-uso="nao"><td class="c">video</td><td>Indicador de vídeo disponível</td><td class="t">Booleano</td><td>Verdadeiro ou falso</td></tr>
-        <tr><td class="c">vote_average</td><td>Nota média atribuída pelo público</td><td class="t">Decimal</td><td>0,0 a 10,0</td></tr>
-        <tr><td class="c">vote_count</td><td>Número de votos recebidos</td><td class="t">Inteiro</td><td>Zero ou mais</td></tr>
-        <tr data-uso="nao"><td class="c">genres_ids</td><td>Identificadores de gênero no TMDB</td><td class="t">Texto</td><td>Lista de identificadores</td></tr>
-        <tr><td class="c">genres</td><td>Nomes dos gêneros cinematográficos</td><td class="t">Texto</td><td>Lista (Drama, Comedy, Thriller e outros)</td></tr>
-      </tbody>
-    </table>
-  </div>
-  <p class="src">Quadro 3 · elaborado pelos autores com base em Vinícius (2026) · kaggle.com/datasets/viniciusno/oscar-nominees-and-winners-with-tmdb-metadata</p>
+  <p class="src">Vinícius (2026) · kaggle.com/datasets/viniciusno/oscar-nominees-and-winners-with-tmdb-metadata</p>
 </section>
 
-<section class="slide" id="base-demog" data-section="Bases" aria-label="Dicionário Demographics">
+<section class="slide" id="base-demog" data-section="Bases" aria-label="Base Demographics">
   <div class="head">
     <div class="head-row">
-      <p class="eyebrow">Base 4 de 4 · dicionário de dados</p>
+      <p class="eyebrow">Base 4 de 4</p>
       <div class="jump" data-jump-group="bases"></div>
     </div>
     <h2 class="h">Demographics of Academy Awards (Oscars) Winners</h2>
-    <div class="head-row">
-      <p class="small"><b class="strong">441 registros · 27 colunas · 348 profissionais · 1927–2014.</b> Classificação colaborativa (CrowdFlower) dos vencedores de atuação e direção.</p>
-      <button class="btn" type="button" id="tg-demog" data-toggle-all aria-controls="d-demog" aria-pressed="false">Mostrar não usados (7)</button>
+    <p class="lead">Perfil dos vencedores de atuação e direção até 2014, classificado de forma colaborativa (CrowdFlower).</p>
+  </div>
+  <div class="grid c2 fill center-y">
+    <div class="stack">
+      <div class="stats c2" style="display:grid">
+        <div class="stat"><span class="v">441</span><span class="k">registros</span></div>
+        <div class="stat"><span class="v">348</span><span class="k">profissionais</span></div>
+      </div>
+      <div class="usage">
+        <p class="num">15<span class="of"> de 27</span></p>
+        <p class="small">colunas usadas no projeto</p>
+        <div class="units row" data-units="27" data-on="15" role="img" aria-label="15 de 27 colunas usadas"></div>
+      </div>
+    </div>
+    <div class="stack-s">
+      <p class="label">Colunas usadas</p>
+      <ul class="cols">
+        <li><code>person</code><span>nome do profissional</span></li>
+        <li><code>movie</code><span>filme premiado</span></li>
+        <li><code>award</code><span>categoria</span></li>
+        <li><code>year_of_award</code><span>ano da premiação</span></li>
+        <li><code>date_of_birth</code><span>data de nascimento</span></li>
+        <li><code>birthplace</code><span>local de nascimento</span></li>
+        <li><code>race_ethnicity</code><span>classificação étnico-racial</span></li>
+        <li><code>biourl</code><span>fonte biográfica</span></li>
+        <li><code>_trusted_judgments</code><span>nº de julgamentos</span></li>
+        <li><code>…:confidence</code><span>6 colunas · concordância por atributo</span></li>
+      </ul>
     </div>
   </div>
-  <div class="tbl fill">
-    <table class="dict" id="d-demog">
-      <thead><tr><th>Campo</th><th>Descrição</th><th>Tipo</th><th>Valores possíveis</th></tr></thead>
-      <tbody>
-        <tr data-uso="nao"><td class="c">_unit_id</td><td>Identificador da unidade de classificação</td><td class="t">Inteiro</td><td>Identificador numérico</td></tr>
-        <tr data-uso="nao"><td class="c">_golden</td><td>Indicador de registro de controle</td><td class="t">Booleano</td><td>Verdadeiro (25) ou falso (416)</td></tr>
-        <tr data-uso="nao"><td class="c">_unit_state</td><td>Situação da unidade de classificação</td><td class="t">Texto</td><td>finalized (94%) ou golden (6%)</td></tr>
-        <tr><td class="c">_trusted_judgments</td><td>Número de julgamentos considerados</td><td class="t">Inteiro</td><td>3 a 95</td></tr>
-        <tr data-uso="nao"><td class="c">_last_judgment_at</td><td>Data do último julgamento</td><td class="t">Data</td><td>Fevereiro de 2015</td></tr>
-        <tr><td class="c">person</td><td>Nome do profissional premiado</td><td class="t">Texto</td><td>348 valores distintos</td></tr>
-        <tr><td class="c">movie</td><td>Filme pelo qual foi premiado</td><td class="t">Texto</td><td>432 valores distintos</td></tr>
-        <tr><td class="c">award</td><td>Categoria da premiação</td><td class="t">Texto</td><td>Best Actor, Best Actress, Best Supporting Actor, Best Supporting Actress, Best Director</td></tr>
-        <tr><td class="c">year_of_award</td><td>Ano da premiação</td><td class="t">Inteiro</td><td>1927 a 2014</td></tr>
-        <tr><td class="c">date_of_birth</td><td>Data de nascimento</td><td class="t">Data</td><td>Datas; apresenta erros de século</td></tr>
-        <tr><td class="c">birthplace</td><td>Local de nascimento</td><td class="t">Texto</td><td>384 valores distintos</td></tr>
-        <tr><td class="c">race_ethnicity</td><td>Classificação étnico-racial</td><td class="t">Texto</td><td>White (93%), Black (3%) e demais</td></tr>
-        <tr data-uso="nao"><td class="c">religion</td><td>Religião declarada</td><td class="t">Texto</td><td>Na (61%), Roman Catholic (14%) e demais</td></tr>
-        <tr data-uso="nao"><td class="c">sexual_orientation</td><td>Orientação declarada</td><td class="t">Texto</td><td>Straight (90%), Bisexual (5%) e demais</td></tr>
-        <tr><td class="c">biourl</td><td>Endereço da fonte biográfica</td><td class="t">Texto</td><td>Endereço eletrônico</td></tr>
-        <tr><td class="c">…:confidence</td><td>Grau de concordância entre classificadores, por atributo</td><td class="t">Decimal</td><td>0,33 a 1,00</td></tr>
-        <tr data-uso="nao"><td class="c">…_gold</td><td>Valores de referência dos registros de controle</td><td class="t">Texto</td><td>Nulo na maioria dos registros</td></tr>
-      </tbody>
-    </table>
-  </div>
-  <p class="src">Quadro 4 · elaborado pelos autores com base em Felix Mejia (2026) · kaggle.com/datasets/fmejia21/demographics-of-academy-awards-oscars-winners</p>
+  <p class="src">Felix Mejia (2026) · kaggle.com/datasets/fmejia21/demographics-of-academy-awards-oscars-winners</p>
 </section>
 
 <!-- ===================== PERGUNTAS ===================== -->
@@ -826,59 +772,34 @@ tr.hl td{background:var(--gold-wash)}
   <div class="head">
     <p class="eyebrow">Análise exploratória · carga</p>
     <h2 class="h">Quatro bases, escalas muito diferentes</h2>
+    <p class="lead">Primeiro passo: carregar cada base e medir tamanho, repetição e completude. Esses três números já mostram onde vai estar o trabalho de tratamento.</p>
   </div>
-  <div class="grid c64 fill center-y">
-    <div class="tbl">
-      <table>
-        <thead><tr><th>Base</th><th class="r">Registros</th><th class="r">Colunas</th><th class="r">Duplicados</th><th class="r">Células nulas</th></tr></thead>
-        <tbody class="tab" style="font-size:var(--t-body)">
-          <tr><td class="strong">The Oscar Award</td><td class="r">12.137</td><td class="r">14</td><td class="r">0</td><td class="r">26,50%</td></tr>
-          <tr class="hl"><td class="strong">Film Awards (IMDb)</td><td class="r"><b>2.158.525</b></td><td class="r">21</td><td class="r"><b>21.857</b></td><td class="r">31,29%</td></tr>
-          <tr><td class="strong">TMDB Metadata</td><td class="r">5.199</td><td class="r">19</td><td class="r">0</td><td class="r">5,73%</td></tr>
-          <tr><td class="strong">Demographics</td><td class="r">441</td><td class="r">27</td><td class="r">0</td><td class="r">22,07%</td></tr>
-        </tbody>
-      </table>
-      <p class="src" style="margin-top:var(--g1)">Resumo de integridade · saída de analise_exploratoria.py</p>
-    </div>
-    <div class="stack">
-      <div class="stack-s ruled-ink">
-        <p class="label">Ferramentas</p>
-        <p class="body">Python com <b>Pandas</b> para manipulação e tratamento; <b>Matplotlib</b> e <b>Seaborn</b> para os gráficos.</p>
-      </div>
-      <div class="stack-s ruled-ink">
-        <p class="label">Importante</p>
-        <p class="body">As transformações a seguir são <b>decisões identificadas nesta fase</b>, a executar no ETL antes da carga do DW. Cada uma nasce de um achado da exploração.</p>
-      </div>
-    </div>
+  <div class="tbl fill" style="display:flex;align-items:center">
+    <table>
+      <thead><tr><th>Base</th><th class="r">Registros</th><th class="r">Colunas</th><th class="r">Duplicados</th><th class="r">Células nulas</th><th style="padding-left:calc(var(--u)*2)">O que isso significa</th></tr></thead>
+      <tbody class="tab" style="font-size:var(--t-body)">
+        <tr><td class="strong">The Oscar Award</td><td class="r">12.137</td><td class="r">14</td><td class="r">0</td><td class="r">26,50%</td><td class="k" style="padding-left:calc(var(--u)*2)">Base central, uma linha por indicação. Os nulos se concentram em textos complementares (Note, Citation) e no Winner, que fica vazio quando a indicação não venceu.</td></tr>
+        <tr class="hl"><td class="strong">Film Awards (IMDb)</td><td class="r"><b>2.158.525</b></td><td class="r">21</td><td class="r"><b>21.857</b></td><td class="r">31,29%</td><td class="k" style="padding-left:calc(var(--u)*2)">178 vezes maior que a base do Oscar, porque inclui TV, música e festivais. Única com linhas repetidas: exige filtro e deduplicação.</td></tr>
+        <tr><td class="strong">TMDB Metadata</td><td class="r">5.199</td><td class="r">19</td><td class="r">0</td><td class="r">5,73%</td><td class="k" style="padding-left:calc(var(--u)*2)">A mais completa. Praticamente uma linha por filme indicado, com gênero, idioma e nota do público.</td></tr>
+        <tr><td class="strong">Demographics</td><td class="r">441</td><td class="r">27</td><td class="r">0</td><td class="r">22,07%</td><td class="k" style="padding-left:calc(var(--u)*2)">A menor: só vencedores de atuação e direção. Os nulos vêm quase todos de colunas de controle da plataforma de classificação.</td></tr>
+      </tbody>
+    </table>
   </div>
-</section>
-
-<section class="slide" id="eda-oscar" data-section="Análise exploratória" aria-label="Ausentes em The Oscar Award">
-  <div class="head">
-    <p class="eyebrow">Análise exploratória · The Oscar Award</p>
-    <h2 class="h">Valores ausentes com três naturezas diferentes</h2>
-  </div>
-  <div class="grid c57 fill center-y">
-    <div class="stack-s">
-      <div class="bars" style="--lw:calc(var(--u)*10)">
-        <span class="bl">Note</span><span class="bt"><span class="bf" style="--v:94.84"></span></span><span class="bv">94,84%</span>
-        <span class="bl">Citation</span><span class="bt"><span class="bf" style="--v:90.10"></span></span><span class="bv">90,10%</span>
-        <span class="bl">Detail</span><span class="bt"><span class="bf" style="--v:73.74"></span></span><span class="bv">73,74%</span>
-        <span class="bl">Winner</span><span class="bt"><span class="bf ink" style="--v:71.04"></span></span><span class="bv">71,04%</span>
-        <span class="bl">Film</span><span class="bt"><span class="bf slate" style="--v:10.55"></span></span><span class="bv">10,55%</span>
-        <span class="bl">FilmId</span><span class="bt"><span class="bf slate" style="--v:10.55"></span></span><span class="bv">10,55%</span>
-        <span class="bl">Name</span><span class="bt"><span class="bf none" style="--v:9.91"></span></span><span class="bv">9,91%</span>
-        <span class="bl">NomineeIds</span><span class="bt"><span class="bf slate" style="--v:7.29"></span></span><span class="bv">7,29%</span>
-        <span class="bl">Nominees</span><span class="bt"><span class="bf slate" style="--v:2.95"></span></span><span class="bv">2,95%</span>
-      </div>
-      <p class="scale-note">% de registros ausentes · escala 0–100% · Tabela 2</p>
+  <div class="grid c3">
+    <div class="stack-s ruled-ink">
+      <p class="label">Como ler</p>
+      <p class="small"><b class="strong">Duplicados</b>: linhas idênticas a outra. <b class="strong">Células nulas</b>: % de células vazias em toda a base (linhas × colunas).</p>
     </div>
-    <div class="stack">
-      <div class="key"><i class="gold"></i><div><b>Informação complementar</b><p>Note, Citation e Detail passam de 70%: textos de casos excepcionais, fora das perguntas de negócio — candidatas ao descarte.</p></div></div>
-      <div class="key"><i class="ink"></i><div><b>Nulidade de representação</b><p>Em Winner, nulo significa “não premiado”, não dado faltante: converter em 0 na carga.</p></div></div>
-      <div class="key"><i class="slate"></i><div><b>Nulidade estrutural</b><p>Film, FilmId, Nominees e NomineeIds faltam em premiações honorárias e técnicas: linhas de valor não aplicável nas dimensões, sem excluir o registro.</p></div></div>
+    <div class="stack-s ruled-ink">
+      <p class="label">Ferramentas</p>
+      <p class="small">Python com <b class="strong">Pandas</b> para manipular e tratar; <b class="strong">Matplotlib</b> e <b class="strong">Seaborn</b> para os gráficos.</p>
+    </div>
+    <div class="stack-s ruled-ink">
+      <p class="label">Importante</p>
+      <p class="small">Cada achado a seguir vira uma <b class="strong">decisão de tratamento</b>, executada no ETL antes da carga do DW.</p>
     </div>
   </div>
+  <p class="src">Resumo de integridade · saída de analise_exploratoria.py</p>
 </section>
 
 <section class="slide" id="eda-winner" data-section="Análise exploratória" aria-label="Campo Winner">
@@ -935,17 +856,18 @@ tr.hl td{background:var(--gold-wash)}
   <div class="head">
     <p class="eyebrow">Análise exploratória · Film Awards (IMDb)</p>
     <h2 class="h">Um filtro que remove 97% da base</h2>
+    <p class="lead">Para a Meta 1 só interessam as premiações de cinema que acontecem antes do Oscar, e elas são uma fração pequena desta base.</p>
   </div>
   <div class="stack-s">
     <div class="bars" style="--lw:calc(var(--u)*13);--vw:calc(var(--u)*11);--max:2158525">
-      <span class="bl">antes do filtro</span><span class="bt" style="height:calc(var(--u)*2.4)"><span class="bf ink" style="--v:2158525"></span></span><span class="bv num" style="font-size:calc(var(--u)*2.2);color:var(--ink)">2.158.525</span>
-      <span class="bl">após o filtro</span><span class="bt" style="height:calc(var(--u)*2.4)"><span class="bf" style="--v:64149"></span></span><span class="bv num" style="font-size:calc(var(--u)*2.2);color:var(--gold)">64.149</span>
+      <span class="bl">antes do filtro</span><span class="bt" style="height:calc(var(--u)*2.2)"><span class="bf ink" style="--v:2158525"></span></span><span class="bv num" style="font-size:calc(var(--u)*2.1);color:var(--ink)">2.158.525</span>
+      <span class="bl">após o filtro</span><span class="bt" style="height:calc(var(--u)*2.2)"><span class="bf" style="--v:64149"></span></span><span class="bv num" style="font-size:calc(var(--u)*2.1);color:var(--gold)">64.149</span>
     </div>
-    <p class="scale-note">Registros · mesma escala · redução de 97,03% · filtro de eventos e período 1950–2020</p>
+    <p class="scale-note">Registros · mesma escala · redução de 97,03%</p>
   </div>
   <div class="grid c3 fill center-y">
     <div class="stack-s">
-      <p class="label">Cauda longa de eventos</p>
+      <p class="step-h"><span>1</span>Por que filtrar</p>
       <div class="bars" style="--lw:calc(var(--u)*11);--vw:calc(var(--u)*5.2);--max:83400">
         <span class="bl" style="font-family:var(--f-body)">Primetime Emmy</span><span class="bt"><span class="bf slate" style="--v:83400"></span></span><span class="bv">83.400</span>
         <span class="bl" style="font-family:var(--f-body)">Daytime Emmy</span><span class="bt"><span class="bf slate" style="--v:49369"></span></span><span class="bv">49.369</span>
@@ -953,97 +875,20 @@ tr.hl td{background:var(--gold-wash)}
         <span class="bl" style="font-family:var(--f-body)">News &amp; Doc. Emmy</span><span class="bt"><span class="bf slate" style="--v:26331"></span></span><span class="bv">26.331</span>
         <span class="bl" style="font-family:var(--f-body)">Academy Awards</span><span class="bt"><span class="bf" style="--v:25929"></span></span><span class="bv">25.929</span>
       </div>
-      <p class="small">O Oscar é só o 5º evento mais frequente; TV, música e teatro dominam.</p>
+      <p class="small">A base é dominada por TV: o próprio Oscar é só o <b class="strong">5º evento</b> mais frequente. Sem filtro, o desempenho nas precursoras se mistura a prêmios de TV.</p>
     </div>
     <div class="stack-s">
-      <p class="label">Nomes de prêmio genéricos</p>
-      <div class="bars" style="--lw:calc(var(--u)*10);--vw:calc(var(--u)*5.2);--max:38703">
-        <span class="bl" style="font-family:var(--f-body)">Audience Award</span><span class="bt"><span class="bf slate" style="--v:38703"></span></span><span class="bv">38.703</span>
-        <span class="bl" style="font-family:var(--f-body)">Festival Award</span><span class="bt"><span class="bf slate" style="--v:38189"></span></span><span class="bv">38.189</span>
-        <span class="bl" style="font-family:var(--f-body)">Jury Award</span><span class="bt"><span class="bf slate" style="--v:38146"></span></span><span class="bv">38.146</span>
-      </div>
-      <p class="small">Aparecem em vários festivais e cerimônias. Por isso o filtro combina <code>eventName</code> <b>e</b> <code>awardName</code>.</p>
+      <p class="step-h"><span>2</span>Como filtrar</p>
+      <p class="small">Mantemos só os <b class="strong">eventos de cinema</b> que antecedem o Oscar e o período <b class="strong">1950–2020</b>.</p>
+      <p class="small">O filtro olha o evento <b>e</b> o nome do prêmio (<code>eventName</code> + <code>awardName</code>), porque nomes como “Audience Award” e “Jury Award” se repetem em vários festivais e cerimônias — cerca de 38 mil registros cada.</p>
     </div>
     <div class="stack-s">
-      <p class="label">Descartes</p>
-      <p class="small"><b class="strong">7 colunas</b> aplicáveis só a TV, música ou episódios, com 83,25% a 99,53% de ausência.</p>
-      <p class="small"><b class="strong">5.017 linhas</b> sem <code>name</code>, <code>const</code>, <code>isPrimary</code> e <code>isSecondary</code> — o mesmo conjunto de linhas incompletas.</p>
-      <p class="small"><code>isWinner</code> (785) e <code>awardName</code> (788): desfecho não determinado, 0,04%.</p>
-    </div>
-  </div>
-</section>
-
-<section class="slide" id="eda-precursoras" data-section="Análise exploratória" aria-label="Eventos precursores após o filtro">
-  <div class="head">
-    <p class="eyebrow">Análise exploratória · Film Awards (IMDb)</p>
-    <h2 class="h">O que sobra após o filtro — e o que falta</h2>
-  </div>
-  <div class="grid c64 fill center-y">
-    <div class="tbl">
-      <table class="prec">
-        <thead><tr><th>Evento (eventName)</th><th>Prêmio (awardName)</th><th>Na base?</th><th class="r" style="width:34%">Registros após o filtro</th></tr></thead>
-        <tbody>
-          <tr><td class="strong">Academy Awards, USA</td><td class="muted">Oscar</td><td>Sim</td><td><div class="bars" style="--lw:0px;--vw:calc(var(--u)*5);--max:19547;grid-template-columns:1fr var(--vw)"><span class="bt"><span class="bf ink" style="--v:19547"></span></span><span class="bv">19.547</span></div></td></tr>
-          <tr><td class="strong">Screen Actors Guild Awards</td><td class="muted">Actor</td><td>Sim</td><td><div class="bars" style="--vw:calc(var(--u)*5);--max:19547;grid-template-columns:1fr var(--vw)"><span class="bt"><span class="bf" style="--v:13193"></span></span><span class="bv">13.193</span></div></td></tr>
-          <tr><td class="strong">BAFTA Awards</td><td class="muted">BAFTA Film Award</td><td>Sim</td><td><div class="bars" style="--vw:calc(var(--u)*5);--max:19547;grid-template-columns:1fr var(--vw)"><span class="bt"><span class="bf" style="--v:12641"></span></span><span class="bv">12.641</span></div></td></tr>
-          <tr><td class="strong">Annie Awards</td><td class="muted">Annie</td><td>Sim</td><td><div class="bars" style="--vw:calc(var(--u)*5);--max:19547;grid-template-columns:1fr var(--vw)"><span class="bt"><span class="bf" style="--v:6759"></span></span><span class="bv">6.759</span></div></td></tr>
-          <tr><td class="strong">Directors Guild of America, USA</td><td class="muted">DGA Award</td><td>Sim</td><td><div class="bars" style="--vw:calc(var(--u)*5);--max:19547;grid-template-columns:1fr var(--vw)"><span class="bt"><span class="bf" style="--v:5728"></span></span><span class="bv">5.728</span></div></td></tr>
-          <tr><td class="strong">People's Choice Awards, USA</td><td class="muted">People's Choice Award</td><td>Sim</td><td><div class="bars" style="--vw:calc(var(--u)*5);--max:19547;grid-template-columns:1fr var(--vw)"><span class="bt"><span class="bf" style="--v:3843"></span></span><span class="bv">3.843</span></div></td></tr>
-          <tr><td class="strong">Writers Guild of America, USA</td><td class="muted">WGA Award (Screen)</td><td>Sim</td><td><div class="bars" style="--vw:calc(var(--u)*5);--max:19547;grid-template-columns:1fr var(--vw)"><span class="bt"><span class="bf" style="--v:2438"></span></span><span class="bv">2.438</span></div></td></tr>
-          <tr><td class="strong">Golden Globes, USA</td><td class="muted">Golden Globe</td><td><span class="chip alert">Não</span></td><td class="r muted">—</td></tr>
-          <tr><td class="strong">Producers Guild of America, USA</td><td class="muted">PGA Award</td><td><span class="chip alert">Não</span></td><td class="r muted">—</td></tr>
-        </tbody>
-      </table>
-      <p class="src" style="margin-top:var(--g1)">Quadro 5 e Tabela 12 · elaborados pelos autores (2026)</p>
-    </div>
-    <div class="stack">
-      <div class="stack-s ruled-ink">
-        <p class="label" style="color:var(--alert)">Pendência de verificação</p>
-        <p class="body">Golden Globes e PGA, previstos como precursoras, <b>não aparecem</b> após o filtro.</p>
+      <p class="step-h"><span>3</span>O que sobra</p>
+      <div class="pill-row">
+        <span class="chip ink">Academy Awards</span><span class="chip gold">SAG</span><span class="chip gold">BAFTA</span><span class="chip gold">Annie</span><span class="chip gold">DGA</span><span class="chip gold">People's Choice</span><span class="chip gold">WGA</span>
       </div>
-      <div class="stack-s ruled-ink">
-        <p class="label">Achado útil</p>
-        <p class="body">O Annie Awards, principal premiação do cinema de animação, aparece com 6.759 registros e pode complementar Melhor Filme de Animação.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="slide" id="eda-tmdb" data-section="Análise exploratória" aria-label="Ausentes em TMDB Metadata">
-  <div class="head">
-    <p class="eyebrow">Análise exploratória · TMDB Metadata</p>
-    <h2 class="h">322 linhas que nunca encontraram seu filme no TMDB</h2>
-  </div>
-  <div class="grid c57 fill center-y">
-    <div class="stack-s">
-      <div class="bars" style="--lw:calc(var(--u)*13);--max:25">
-        <span class="bl">backdrop_path</span><span class="bt"><span class="bf slate" style="--v:21.75"></span></span><span class="bv">21,75%</span>
-        <span class="bl">genres_ids</span><span class="bt"><span class="bf ink" style="--v:8.39"></span></span><span class="bv">8,39%</span>
-        <span class="bl">genres</span><span class="bt"><span class="bf ink" style="--v:8.39"></span></span><span class="bv">8,39%</span>
-        <span class="bl">poster_path</span><span class="bt"><span class="bf none" style="--v:8.33"></span></span><span class="bv">8,33%</span>
-        <span class="bl">overview</span><span class="bt"><span class="bf none" style="--v:6.29"></span></span><span class="bv">6,29%</span>
-      </div>
-      <div class="bracket">
-        <p class="bracket-label">9 colunas · exatamente 322 ausentes cada</p>
-        <div class="bars" style="--lw:calc(var(--u)*13);--max:25;gap:calc(var(--u)*.3) var(--g1)">
-          <span class="bl">adult</span><span class="bt"><span class="bf" style="--v:6.19"></span></span><span class="bv">6,19%</span>
-          <span class="bl">original_title</span><span class="bt"><span class="bf" style="--v:6.19"></span></span><span class="bv">6,19%</span>
-          <span class="bl">original_language</span><span class="bt"><span class="bf" style="--v:6.19"></span></span><span class="bv">6,19%</span>
-          <span class="bl">id_tmdb</span><span class="bt"><span class="bf" style="--v:6.19"></span></span><span class="bv">6,19%</span>
-          <span class="bl">popularity</span><span class="bt"><span class="bf" style="--v:6.19"></span></span><span class="bv">6,19%</span>
-          <span class="bl">video</span><span class="bt"><span class="bf" style="--v:6.19"></span></span><span class="bv">6,19%</span>
-          <span class="bl">release_date</span><span class="bt"><span class="bf" style="--v:6.19"></span></span><span class="bv">6,19%</span>
-          <span class="bl">vote_count</span><span class="bt"><span class="bf" style="--v:6.19"></span></span><span class="bv">6,19%</span>
-          <span class="bl">vote_average</span><span class="bt"><span class="bf" style="--v:6.19"></span></span><span class="bv">6,19%</span>
-        </div>
-      </div>
-      <p class="scale-note">% de registros ausentes · escala 0–25% · Tabela 13</p>
-    </div>
-    <div class="stack">
-      <div class="stack-s ruled-ink"><p class="label">Bloco de 322</p><p class="small">A coincidência exata indica filmes cujo <b class="strong">pareamento com o TMDB falhou por completo</b>, e não ausências independentes.</p></div>
-      <div class="stack-s ruled-ink"><p class="label">genres · 436 ausentes</p><p class="small">Variável central da Meta 2: avaliar o impacto na série por década antes de descartar. Gênero principal = <b class="strong">primeiro gênero listado</b>.</p></div>
-      <div class="stack-s ruled-ink"><p class="label">Granularidade</p><p class="small"><b class="strong">5.087 filmes distintos</b> em 5.199 registros: 112 filmes aparecem em mais de uma linha.</p></div>
-      <div class="stack-s ruled-ink"><p class="label">Idioma original</p><p class="small"><b class="strong">en 82,52%</b> · fr 2,67% · it 1,17% · es 1,00%. backdrop_path será descartado.</p></div>
+      <p class="small">Sete eventos. O próprio Oscar fica na base para <b class="strong">validação cruzada</b> com a primeira base.</p>
+      <p class="small">Também saem 7 colunas que só servem a TV e música (83% a 99,5% vazias) e 5.017 linhas sem indicado identificado.</p>
     </div>
   </div>
 </section>
@@ -1132,25 +977,41 @@ tr.hl td{background:var(--gold-wash)}
   <div class="head">
     <p class="eyebrow">Análise exploratória · viabilidade de integração</p>
     <h2 class="h">Como as quatro bases se encontram</h2>
+    <p class="lead" style="max-width:calc(var(--u)*80)">A base do Oscar é o centro e se liga às outras três por uma chave. Só uma ligação usa código em comum; as outras duas dependem de texto.</p>
   </div>
   <div class="fill" style="display:flex;flex-direction:column;justify-content:center">
-    <div class="join">
+    <div class="join join4 join-head">
+      <p class="label">Base central</p><p class="label">Chave de ligação</p><p class="label">Base ligada</p><p class="label">O que traz → onde fica no DW</p>
+    </div>
+    <div class="join join4">
       <p class="node">The Oscar Award<small>FilmId · NomineeIds</small></p>
-      <div class="link"><span class="keytxt">identificador IMDb: <code>const</code> = <code>FilmId</code> / <code>NomineeIds</code></span><span class="line"></span><span class="chip ink">correspondência exata</span></div>
+      <div class="link"><span class="keytxt">mesmo <b>código IMDb</b> nas duas bases (tt… filme, nm… pessoa)</span><span class="line"></span><span class="chip ink">correspondência exata</span></div>
       <p class="node">Film Awards (IMDb)<small>const</small></p>
+      <p class="gain">Vitórias nas premiações precursoras<code>FAT_INDICACAO_PRECURSORA</code></p>
     </div>
-    <div class="join">
+    <div class="join join4">
       <p class="node">The Oscar Award<small>Film · Year</small></p>
-      <div class="link"><span class="keytxt"><b>título do filme + ano de lançamento</b> (sem ID comum; só <code>id_tmdb</code>)</span><span class="line"></span><span class="chip gold">texto normalizado</span></div>
+      <div class="link"><span class="keytxt"><b>título do filme + ano</b> — o TMDB não tem código IMDb, só <code>id_tmdb</code></span><span class="line"></span><span class="chip gold">texto normalizado</span></div>
       <p class="node">TMDB Metadata<small>film · year_film</small></p>
+      <p class="gain">Gênero, idioma original, nota e votos do público<code>DIM_FILME</code></p>
     </div>
-    <div class="join">
+    <div class="join join4">
       <p class="node">The Oscar Award<small>Nominees · ano</small></p>
-      <div class="link"><span class="keytxt"><b>nome do profissional + ano da premiação</b></span><span class="line"></span><span class="chip gold">texto normalizado</span></div>
+      <div class="link"><span class="keytxt"><b>nome do profissional + ano da premiação</b> — também sem código comum</span><span class="line"></span><span class="chip gold">texto normalizado</span></div>
       <p class="node">Demographics<small>person · year_of_award</small></p>
+      <p class="gain">Nascimento, local de nascimento e classificação étnico-racial<code>DIM_PESSOA</code></p>
     </div>
   </div>
-  <p class="small">Chaves textuais são sensíveis a grafia, acentos, pontuação, artigos e títulos alternativos: normalização prévia, e os registros sem correspondência são contados e analisados — não descartados em silêncio.</p>
+  <div class="grid c2">
+    <div class="stack-s ruled-ink">
+      <p class="label">Por que normalizar o texto</p>
+      <p class="small">“The Godfather” e “Godfather, The” são o mesmo filme. Antes de comparar, títulos e nomes vão para <b class="strong">caixa baixa</b>, perdem <b class="strong">acentos e pontuação</b> e têm os <b class="strong">artigos iniciais padronizados</b>.</p>
+    </div>
+    <div class="stack-s ruled-ink">
+      <p class="label">E quando não encontra par</p>
+      <p class="small">Os registros sem correspondência são <b class="strong">contados e relatados</b>, não descartados em silêncio. Na fato, a indicação é ligada à linha “não aplicável” da dimensão, e a contagem de indicações continua correta.</p>
+    </div>
+  </div>
 </section>
 
 <!-- ===================== MODELAGEM ===================== -->
@@ -1225,35 +1086,6 @@ tr.hl td{background:var(--gold-wash)}
   </figure>
 </section>
 
-<section class="slide" id="dw-decisoes" data-section="Modelagem" aria-label="Decisões de modelagem">
-  <div class="head">
-    <p class="eyebrow">Modelagem · decisões</p>
-    <h2 class="h">Chaves, linhas “não aplicável” e medidas</h2>
-  </div>
-  <div class="grid c2 fill center-y">
-    <div class="stack">
-      <div class="stack-s ruled-ink"><p class="label">Chaves substitutas</p><p class="small">Todas as dimensões usam <code>COD_</code> + abreviação, geradas por <b class="strong">sequências</b> — e não IDENTITY — para permitir inserir as linhas de valor não aplicável.</p></div>
-      <div class="stack-s ruled-ink"><p class="label">IDs de origem preservados</p><p class="small"><code>COD_FILME_IMDB</code>, <code>COD_PESSOA_IMDB</code> e <code>COD_FILME_TMDB</code> ficam como atributos, úteis à conferência dos dados.</p></div>
-      <div class="stack-s ruled-ink"><p class="label">Linha −1 “NÃO APLICÁVEL”</p><p class="small">Em cada dimensão: mantém as FKs das fatos obrigatórias e a contagem íntegra. Exceção: <code>COD_PESSOA</code> é opcional na fato do Oscar — nulo em premiação a obra, −1 quando o profissional não é identificado.</p></div>
-    </div>
-    <div class="stack-s">
-      <p class="label">Medidas de FAT_INDICACAO_OSCAR</p>
-      <div class="tbl">
-        <table>
-          <tbody>
-            <tr><td class="c">STA_VENCEDOR</td><td>1 premiada · 0 não premiada</td></tr>
-            <tr><td class="c">QTD_INDICACAO</td><td>constante 1, para contagem em BI</td></tr>
-            <tr><td class="c">QTD_INDICACOES_FILME</td><td>indicações do filme na mesma cerimônia — fator central da Meta 1</td></tr>
-            <tr><td class="c">QTD_INDICACOES_CERIMONIA</td><td><b>semiaditiva</b>: máximo ou média na cerimônia, nunca soma</td></tr>
-            <tr><td class="c">QTD_INDICACOES_ANTERIORES</td><td>acumuladas pelo profissional até a cerimônia</td></tr>
-          </tbody>
-        </table>
-      </div>
-      <p class="small">Indicadores binários derivados na carga: <code>STA_GENERO_DRAMATICO</code>, <code>STA_IDIOMA_INGLES</code>, <code>STA_ETNIA_NAO_BRANCA</code>, <code>STA_NASCIDO_EXTERIOR</code>.</p>
-    </div>
-  </div>
-</section>
-
 <section class="slide" id="dw-fisico" data-section="Modelagem" aria-label="Implantação no Oracle">
   <div class="head">
     <p class="eyebrow">Modelagem · projeto físico · dw_oscar.sql</p>
@@ -1300,157 +1132,158 @@ tr.hl td{background:var(--gold-wash)}
 </section>
 
 <!-- ===== Dicionário de dados do DW ===== -->
-<section class="slide" id="dd-fio" data-section="Modelagem" aria-label="Dicionário FAT_INDICACAO_OSCAR">
+<section class="slide" id="dd-fatos" data-section="Modelagem" aria-label="Dicionário do DW: tabelas fato">
   <div class="head">
-    <div class="head-row"><p class="eyebrow">Dicionário de dados do DW · fato</p><div class="jump" data-jump-group="dd"></div></div>
-    <h2 class="h mono" style="font-family:var(--f-mono);font-stretch:100%;font-size:calc(var(--u)*2.6)">FAT_INDICACAO_OSCAR <span class="gold">FIO</span></h2>
-    <p class="small">Fato de movimento. Grão: uma indicação, em determinada categoria, em determinada cerimônia.</p>
+    <div class="head-row"><p class="eyebrow">Dicionário de dados do DW · fatos</p><div class="jump" data-jump-group="dd"></div></div>
+    <h2 class="h">As duas tabelas fato</h2>
   </div>
-  <div class="tbl fill">
-    <table>
-      <thead><tr><th>Coluna</th><th>Tipo</th><th>Restrições</th><th>Descrição</th></tr></thead>
-      <tbody>
-        <tr><td class="c"><span class="pk">PK</span>ID_INDICACAO</td><td class="t">NUMBER(10)</td><td class="k">padrão SEQ_FAT_INDICACAO_OSCAR</td><td>Identificador da indicação</td></tr>
-        <tr><td class="c"><span class="fk">FK</span>COD_TEMPO</td><td class="t">NUMBER(10)</td><td class="k">NN</td><td>→ DIM_TEMPO</td></tr>
-        <tr><td class="c"><span class="fk">FK</span>COD_CATEGORIA</td><td class="t">NUMBER(10)</td><td class="k">NN</td><td>→ DIM_CATEGORIA</td></tr>
-        <tr><td class="c"><span class="fk">FK</span>COD_FILME</td><td class="t">NUMBER(10)</td><td class="k">NN</td><td>→ DIM_FILME</td></tr>
-        <tr><td class="c"><span class="fk">FK</span>COD_PESSOA</td><td class="t">NUMBER(10)</td><td class="k">opcional</td><td>→ DIM_PESSOA · nula em premiação a obra; −1 se não identificado</td></tr>
-        <tr><td class="c">NUM_CERIMONIA</td><td class="t">NUMBER(3)</td><td class="k">NN · CK 1–150</td><td>Nº ordinal da cerimônia · dimensão degenerada</td></tr>
-        <tr><td class="c">STA_VENCEDOR</td><td class="t">NUMBER(1)</td><td class="k">NN · CK 0/1 · padrão 0</td><td>Medida · 1 premiada, 0 não premiada (nulos da origem → 0)</td></tr>
-        <tr><td class="c">QTD_INDICACAO</td><td class="t">NUMBER(1)</td><td class="k">NN · CK = 1 · padrão 1</td><td>Medida aditiva unitária, para contagem em BI</td></tr>
-        <tr><td class="c">QTD_INDICACOES_FILME</td><td class="t">NUMBER(3)</td><td class="k"></td><td>Indicações do filme na mesma cerimônia · fator central da Meta 1</td></tr>
-        <tr><td class="c">QTD_INDICACOES_CERIMONIA</td><td class="t">NUMBER(4)</td><td class="k"></td><td>Total de indicações da cerimônia · semiaditiva</td></tr>
-        <tr><td class="c">QTD_INDICACOES_ANTERIORES</td><td class="t">NUMBER(3)</td><td class="k"></td><td>Indicações acumuladas pelo profissional até a cerimônia</td></tr>
-        <tr><td class="c">DES_DETALHE</td><td class="t">VARCHAR2(225)</td><td class="k"></td><td>Detalhe da indicação</td></tr>
-      </tbody>
-    </table>
+  <div class="grid c2 fill" style="min-height:0">
+    <div class="stack-s">
+      <p class="ddt"><code>FAT_INDICACAO_OSCAR</code> <span class="gold">FIO</span></p>
+      <p class="micro">Grão: uma indicação, em uma categoria, em uma cerimônia.</p>
+      <div class="tbl">
+        <table class="compact dd">
+          <tbody>
+            <tr><td class="c"><span class="pk">PK</span>ID_INDICACAO</td><td>identificador da indicação</td></tr>
+            <tr><td class="c"><span class="fk">FK</span>COD_TEMPO</td><td>ano da cerimônia</td></tr>
+            <tr><td class="c"><span class="fk">FK</span>COD_CATEGORIA</td><td>categoria</td></tr>
+            <tr><td class="c"><span class="fk">FK</span>COD_FILME</td><td>filme indicado</td></tr>
+            <tr><td class="c"><span class="fk">FK</span>COD_PESSOA</td><td>profissional · nula se o prêmio é da obra</td></tr>
+            <tr><td class="c">NUM_CERIMONIA</td><td>nº da cerimônia</td></tr>
+            <tr class="hl"><td class="c">STA_VENCEDOR</td><td>1 venceu · 0 não venceu</td></tr>
+            <tr><td class="c">QTD_INDICACAO</td><td>sempre 1, para contagem</td></tr>
+            <tr class="hl"><td class="c">QTD_INDICACOES_FILME</td><td>indicações do filme na cerimônia · Meta 1</td></tr>
+            <tr><td class="c">QTD_INDICACOES_CERIMONIA</td><td>total de indicações da cerimônia</td></tr>
+            <tr><td class="c">QTD_INDICACOES_ANTERIORES</td><td>indicações anteriores do profissional</td></tr>
+            <tr><td class="c">DES_DETALHE</td><td>personagem, canção etc.</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <div class="stack-s">
+      <p class="ddt"><code>FAT_INDICACAO_PRECURSORA</code> <span class="gold">FIP</span></p>
+      <p class="micro">Grão: uma indicação, em uma categoria, em um evento e ano.</p>
+      <div class="tbl">
+        <table class="compact dd">
+          <tbody>
+            <tr><td class="c"><span class="pk">PK</span>ID_INDICACAO_PRECURSORA</td><td>identificador da indicação</td></tr>
+            <tr><td class="c"><span class="fk">FK</span>COD_TEMPO</td><td>ano do evento</td></tr>
+            <tr><td class="c"><span class="fk">FK</span>COD_EVENTO</td><td>evento (BAFTA, SAG…)</td></tr>
+            <tr><td class="c"><span class="fk">FK</span>COD_CATEGORIA</td><td>categoria equivalente no Oscar</td></tr>
+            <tr><td class="c"><span class="fk">FK</span>COD_FILME</td><td>filme · −1 se o prêmio é de pessoa</td></tr>
+            <tr><td class="c"><span class="fk">FK</span>COD_PESSOA</td><td>profissional · −1 se o prêmio é de obra</td></tr>
+            <tr class="hl"><td class="c">STA_VENCEDOR</td><td>1 venceu · 0 não venceu</td></tr>
+            <tr><td class="c">QTD_INDICACAO</td><td>sempre 1, para contagem</td></tr>
+            <tr><td class="c">STA_INDICADO_OBRA</td><td>indicado é uma obra</td></tr>
+            <tr><td class="c">STA_INDICADO_PESSOA</td><td>indicado é uma pessoa</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
   </div>
 </section>
 
-<section class="slide" id="dd-fip" data-section="Modelagem" aria-label="Dicionário FAT_INDICACAO_PRECURSORA">
+<section class="slide" id="dd-dims" data-section="Modelagem" aria-label="Dicionário do DW: DIM_FILME e DIM_PESSOA">
   <div class="head">
-    <div class="head-row"><p class="eyebrow">Dicionário de dados do DW · fato</p><div class="jump" data-jump-group="dd"></div></div>
-    <h2 class="h mono" style="font-family:var(--f-mono);font-stretch:100%;font-size:calc(var(--u)*2.6)">FAT_INDICACAO_PRECURSORA <span class="gold">FIP</span></h2>
-    <p class="small">Fato de movimento. Grão: uma indicação, em determinada categoria, em determinado evento e ano.</p>
+    <div class="head-row"><p class="eyebrow">Dicionário de dados do DW · dimensões conformadas</p><div class="jump" data-jump-group="dd"></div></div>
+    <h2 class="h">Filme e pessoa</h2>
   </div>
-  <div class="tbl fill">
-    <table>
-      <thead><tr><th>Coluna</th><th>Tipo</th><th>Restrições</th><th>Descrição</th></tr></thead>
-      <tbody>
-        <tr><td class="c"><span class="pk">PK</span>ID_INDICACAO_PRECURSORA</td><td class="t">NUMBER(10)</td><td class="k">padrão SEQ_FAT_INDICACAO_PRECURSORA</td><td>Identificador da indicação precursora</td></tr>
-        <tr><td class="c"><span class="fk">FK</span>COD_TEMPO</td><td class="t">NUMBER(10)</td><td class="k">NN</td><td>→ DIM_TEMPO</td></tr>
-        <tr><td class="c"><span class="fk">FK</span>COD_EVENTO</td><td class="t">NUMBER(10)</td><td class="k">NN</td><td>→ DIM_EVENTO_PREMIACAO</td></tr>
-        <tr><td class="c"><span class="fk">FK</span>COD_CATEGORIA</td><td class="t">NUMBER(10)</td><td class="k">NN</td><td>→ DIM_CATEGORIA · categoria canônica correspondente, comparável ao Oscar</td></tr>
-        <tr><td class="c"><span class="fk">FK</span>COD_FILME</td><td class="t">NUMBER(10)</td><td class="k">NN</td><td>→ DIM_FILME · −1 quando o prêmio é concedido a profissional</td></tr>
-        <tr><td class="c"><span class="fk">FK</span>COD_PESSOA</td><td class="t">NUMBER(10)</td><td class="k">NN</td><td>→ DIM_PESSOA · −1 quando o prêmio é concedido a obra</td></tr>
-        <tr><td class="c">STA_VENCEDOR</td><td class="t">NUMBER(1)</td><td class="k">NN · CK 0/1 · padrão 0</td><td>Indicador de vitória</td></tr>
-        <tr><td class="c">QTD_INDICACAO</td><td class="t">NUMBER(1)</td><td class="k">NN · CK = 1 · padrão 1</td><td>Medida unitária, para contagem</td></tr>
-        <tr><td class="c">STA_INDICADO_OBRA</td><td class="t">NUMBER(1)</td><td class="k">NN · CK 0/1 · padrão 0</td><td>Derivado de isTitle</td></tr>
-        <tr><td class="c">STA_INDICADO_PESSOA</td><td class="t">NUMBER(1)</td><td class="k">NN · CK 0/1 · padrão 0</td><td>Derivado de isPerson</td></tr>
-      </tbody>
-    </table>
-  </div>
-  <p class="small"><code>CK_FIP_NATURE</code>: STA_INDICADO_OBRA + STA_INDICADO_PESSOA ≥ 1 — toda indicação é de uma obra, de uma pessoa ou de ambas.</p>
-</section>
-
-<section class="slide" id="dd-flm" data-section="Modelagem" aria-label="Dicionário DIM_FILME">
-  <div class="head">
-    <div class="head-row"><p class="eyebrow">Dicionário de dados do DW · dimensão conformada</p><div class="jump" data-jump-group="dd"></div></div>
-    <h2 class="h mono" style="font-family:var(--f-mono);font-stretch:100%;font-size:calc(var(--u)*2.6)">DIM_FILME <span class="gold">FLM</span></h2>
-    <p class="small">Integra o registro da Academia aos metadados descritivos do TMDB.</p>
-  </div>
-  <div class="tbl fill">
-    <table>
-      <thead><tr><th>Coluna</th><th>Tipo</th><th>Restrições</th><th>Descrição</th></tr></thead>
-      <tbody>
-        <tr><td class="c"><span class="pk">PK</span>COD_FILME</td><td class="t">NUMBER(10)</td><td class="k">padrão SEQ_DIM_FILME</td><td>Chave substituta · −1 = não aplicável (honorárias e técnicas sem filme)</td></tr>
-        <tr><td class="c">COD_FILME_IMDB</td><td class="t">VARCHAR2(15)</td><td class="k">NN</td><td>Identificador IMDb do filme</td></tr>
-        <tr><td class="c">COD_FILME_TMDB</td><td class="t">NUMBER(10)</td><td class="k"></td><td>Identificador no TMDB, para rastrear a integração</td></tr>
-        <tr><td class="c">NOM_TITULO</td><td class="t">VARCHAR2(225)</td><td class="k">NN</td><td>Título do filme</td></tr>
-        <tr><td class="c">NUM_ANO_FILME</td><td class="t">NUMBER(4)</td><td class="k"></td><td>Ano do filme</td></tr>
-        <tr><td class="c">NUM_DECADA_FILME</td><td class="t">NUMBER(4)</td><td class="k"></td><td>Década do filme</td></tr>
-        <tr><td class="c">COD_IDIOMA_ORIGINAL</td><td class="t">VARCHAR2(10)</td><td class="k"></td><td>Idioma original da produção</td></tr>
-        <tr><td class="c">STA_IDIOMA_INGLES</td><td class="t">NUMBER(1)</td><td class="k">CK 0/1</td><td>1 quando o idioma original é o inglês</td></tr>
-        <tr><td class="c">DES_GENERO_PRINCIPAL</td><td class="t">VARCHAR2(50)</td><td class="k"></td><td>Primeiro gênero listado em genres (TMDB)</td></tr>
-        <tr><td class="c">STA_GENERO_DRAMATICO</td><td class="t">NUMBER(1)</td><td class="k">CK 0/1</td><td>1 quando o gênero principal é Drama · sustenta a PGND</td></tr>
-        <tr><td class="c">DTA_LANCAMENTO</td><td class="t">DATE</td><td class="k"></td><td>Data de lançamento</td></tr>
-        <tr><td class="c">VAL_NOTA_MEDIA_TMDB</td><td class="t">NUMBER(3,1)</td><td class="k">CK 0–10</td><td>Nota média do público no TMDB, na extração</td></tr>
-        <tr><td class="c">QTD_VOTOS_TMDB</td><td class="t">NUMBER(8)</td><td class="k"></td><td>Número de votos no TMDB</td></tr>
-        <tr><td class="c">VAL_POPULARIDADE_TMDB</td><td class="t">NUMBER(10,3)</td><td class="k"></td><td>Índice de popularidade no TMDB</td></tr>
-      </tbody>
-    </table>
-  </div>
-</section>
-
-<section class="slide" id="dd-pss" data-section="Modelagem" aria-label="Dicionário DIM_PESSOA">
-  <div class="head">
-    <div class="head-row"><p class="eyebrow">Dicionário de dados do DW · dimensão conformada</p><div class="jump" data-jump-group="dd"></div></div>
-    <h2 class="h mono" style="font-family:var(--f-mono);font-stretch:100%;font-size:calc(var(--u)*2.6)">DIM_PESSOA <span class="gold">PSS</span></h2>
-    <p class="small">Integra o registro da Academia aos atributos demográficos da base Demographics.</p>
-  </div>
-  <div class="tbl fill">
-    <table>
-      <thead><tr><th>Coluna</th><th>Tipo</th><th>Restrições</th><th>Descrição</th></tr></thead>
-      <tbody>
-        <tr><td class="c"><span class="pk">PK</span>COD_PESSOA</td><td class="t">NUMBER(10)</td><td class="k">padrão SEQ_DIM_PESSOA</td><td>Chave substituta · −1 = não aplicável (premiações a obras)</td></tr>
-        <tr><td class="c">COD_PESSOA_IMDB</td><td class="t">VARCHAR2(15)</td><td class="k">NN</td><td>Identificador IMDb do profissional</td></tr>
-        <tr><td class="c">NOM_PESSOA</td><td class="t">VARCHAR2(150)</td><td class="k">NN</td><td>Nome do profissional</td></tr>
-        <tr><td class="c">DTA_NASCIMENTO</td><td class="t">DATE</td><td class="k"></td><td>Data de nascimento, após a correção de século</td></tr>
-        <tr><td class="c">STA_DATA_CORRIGIDA</td><td class="t">NUMBER(1)</td><td class="k">CK 0/1 · padrão 0</td><td>1 quando a correção de século foi aplicada na carga</td></tr>
-        <tr><td class="c">DES_LOCAL_NASCIMENTO</td><td class="t">VARCHAR2(150)</td><td class="k"></td><td>Local de nascimento</td></tr>
-        <tr><td class="c">STA_NASCIDO_EXTERIOR</td><td class="t">NUMBER(1)</td><td class="k">CK 0/1</td><td>1 quando nascido fora dos Estados Unidos</td></tr>
-        <tr><td class="c">DES_ETNIA_RACIAL</td><td class="t">VARCHAR2(50)</td><td class="k"></td><td>Classificação étnico-racial da origem (colaborativa)</td></tr>
-        <tr><td class="c">STA_ETNIA_NAO_BRANCA</td><td class="t">NUMBER(1)</td><td class="k">CK 0/1</td><td>1 quando distinta de White · sustenta a PVNB</td></tr>
-        <tr><td class="c">VAL_CONFIANCA_ETNIA</td><td class="t">NUMBER(3,2)</td><td class="k">CK 0–1</td><td>Concordância entre classificadores no atributo étnico-racial</td></tr>
-        <tr><td class="c">STA_CONFIANCA_BAIXA</td><td class="t">NUMBER(1)</td><td class="k">CK 0/1 · padrão 0</td><td>1 quando a confiança é inferior a 0,90</td></tr>
-        <tr><td class="c">COD_GENERO_PROFISSIONAL</td><td class="t">CHAR(1)</td><td class="k">CK F/M/N</td><td>Gênero, de informação pública declarada · N se inconclusivo</td></tr>
-        <tr><td class="c">DES_FONTE_GENERO</td><td class="t">VARCHAR2(255)</td><td class="k"></td><td>Endereço da fonte consultada, para auditoria</td></tr>
-      </tbody>
-    </table>
+  <div class="grid c2 fill" style="min-height:0">
+    <div class="stack-s">
+      <p class="ddt"><code>DIM_FILME</code> <span class="gold">FLM</span></p>
+      <p class="micro">Registro da Academia + metadados do TMDB.</p>
+      <div class="tbl">
+        <table class="compact dd">
+          <tbody>
+            <tr><td class="c"><span class="pk">PK</span>COD_FILME</td><td>chave substituta · −1 = não aplicável</td></tr>
+            <tr><td class="c">COD_FILME_IMDB</td><td>ID no IMDb</td></tr>
+            <tr><td class="c">COD_FILME_TMDB</td><td>ID no TMDB</td></tr>
+            <tr><td class="c">NOM_TITULO</td><td>título</td></tr>
+            <tr><td class="c">NUM_ANO_FILME</td><td>ano do filme</td></tr>
+            <tr><td class="c">NUM_DECADA_FILME</td><td>década do filme</td></tr>
+            <tr><td class="c">COD_IDIOMA_ORIGINAL</td><td>idioma original</td></tr>
+            <tr><td class="c">STA_IDIOMA_INGLES</td><td>1 se o idioma é inglês</td></tr>
+            <tr><td class="c">DES_GENERO_PRINCIPAL</td><td>1º gênero listado no TMDB</td></tr>
+            <tr class="hl"><td class="c">STA_GENERO_DRAMATICO</td><td>1 se Drama · base da PGND</td></tr>
+            <tr><td class="c">DTA_LANCAMENTO</td><td>data de lançamento</td></tr>
+            <tr><td class="c">VAL_NOTA_MEDIA_TMDB</td><td>nota do público, 0 a 10</td></tr>
+            <tr><td class="c">QTD_VOTOS_TMDB</td><td>nº de votos</td></tr>
+            <tr><td class="c">VAL_POPULARIDADE_TMDB</td><td>popularidade</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <div class="stack-s">
+      <p class="ddt"><code>DIM_PESSOA</code> <span class="gold">PSS</span></p>
+      <p class="micro">Registro da Academia + atributos da Demographics.</p>
+      <div class="tbl">
+        <table class="compact dd">
+          <tbody>
+            <tr><td class="c"><span class="pk">PK</span>COD_PESSOA</td><td>chave substituta · −1 = não aplicável</td></tr>
+            <tr><td class="c">COD_PESSOA_IMDB</td><td>ID no IMDb</td></tr>
+            <tr><td class="c">NOM_PESSOA</td><td>nome</td></tr>
+            <tr><td class="c">DTA_NASCIMENTO</td><td>nascimento, com século corrigido</td></tr>
+            <tr><td class="c">STA_DATA_CORRIGIDA</td><td>1 se a data foi corrigida</td></tr>
+            <tr><td class="c">DES_LOCAL_NASCIMENTO</td><td>local de nascimento</td></tr>
+            <tr><td class="c">STA_NASCIDO_EXTERIOR</td><td>1 se nasceu fora dos EUA</td></tr>
+            <tr><td class="c">DES_ETNIA_RACIAL</td><td>classificação étnico-racial</td></tr>
+            <tr class="hl"><td class="c">STA_ETNIA_NAO_BRANCA</td><td>1 se não White · base da PVNB</td></tr>
+            <tr><td class="c">VAL_CONFIANCA_ETNIA</td><td>confiança da classificação</td></tr>
+            <tr><td class="c">STA_CONFIANCA_BAIXA</td><td>1 se a confiança é menor que 0,90</td></tr>
+            <tr><td class="c">COD_GENERO_PROFISSIONAL</td><td>F, M ou N (inconclusivo)</td></tr>
+            <tr><td class="c">DES_FONTE_GENERO</td><td>fonte da informação de gênero</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
   </div>
 </section>
 
-<section class="slide" id="dd-outras" data-section="Modelagem" aria-label="Dicionário DIM_TEMPO, DIM_CATEGORIA e DIM_EVENTO_PREMIACAO">
+<section class="slide" id="dd-outras" data-section="Modelagem" aria-label="Dicionário do DW: DIM_TEMPO, DIM_CATEGORIA e DIM_EVENTO_PREMIACAO">
   <div class="head">
     <div class="head-row"><p class="eyebrow">Dicionário de dados do DW · demais dimensões</p><div class="jump" data-jump-group="dd"></div></div>
     <h2 class="h">Tempo, categoria e evento</h2>
   </div>
-  <div class="stack fill" style="gap:var(--g2)">
-    <div class="tbl">
-      <table class="compact">
-        <thead><tr><th style="width:24%">DIM_TEMPO <span class="gold">TMP</span></th><th style="width:13%">Tipo</th><th style="width:20%">Restrições</th><th>Descrição · conformada, grão de ano</th></tr></thead>
+  <div class="grid c3 fill center-y">
+    <div class="stack-s">
+      <p class="ddt"><code>DIM_TEMPO</code> <span class="gold">TMP</span></p>
+      <p class="micro">Conformada · grão de ano.</p>
+      <table class="compact dd dd-narrow">
         <tbody>
-          <tr><td class="c"><span class="pk">PK</span>COD_TEMPO</td><td class="t">NUMBER(10)</td><td class="k">padrão SEQ_DIM_TEMPO</td><td>Chave substituta · −1 = não aplicável</td></tr>
-          <tr><td class="c">NUM_ANO</td><td class="t">NUMBER(4)</td><td class="k">NN · CK 1900–2100</td><td>Ano civil do evento de premiação</td></tr>
-          <tr><td class="c">NUM_DECADA</td><td class="t">NUMBER(4)</td><td class="k">NN</td><td>Década, pelo truncamento do ano</td></tr>
-          <tr><td class="c">DES_PERIODO</td><td class="t">VARCHAR2(20)</td><td class="k">NN</td><td>Rótulo textual da década, para BI</td></tr>
+          <tr><td class="c"><span class="pk">PK</span>COD_TEMPO</td><td>chave substituta</td></tr>
+          <tr><td class="c">NUM_ANO</td><td>ano</td></tr>
+          <tr><td class="c">NUM_DECADA</td><td>década</td></tr>
+          <tr><td class="c">DES_PERIODO</td><td>rótulo da década</td></tr>
         </tbody>
       </table>
     </div>
-    <div class="tbl">
-      <table class="compact">
-        <thead><tr><th style="width:24%">DIM_CATEGORIA <span class="gold">CAT</span></th><th style="width:13%">Tipo</th><th style="width:20%">Restrições</th><th>Descrição · conformada</th></tr></thead>
+    <div class="stack-s">
+      <p class="ddt"><code>DIM_CATEGORIA</code> <span class="gold">CAT</span></p>
+      <p class="micro">Conformada · une Oscar e precursoras.</p>
+      <table class="compact dd dd-narrow">
         <tbody>
-          <tr><td class="c"><span class="pk">PK</span>COD_CATEGORIA</td><td class="t">NUMBER(10)</td><td class="k">padrão SEQ_DIM_CATEGORIA</td><td>Chave substituta · −1 = não aplicável</td></tr>
-          <tr><td class="c">DES_CATEGORIA_CANONICA</td><td class="t">VARCHAR2(100)</td><td class="k">NN</td><td>Nome padronizado, do campo CanonicalCategory</td></tr>
-          <tr><td class="c">DES_CATEGORIA_ORIGINAL</td><td class="t">VARCHAR2(150)</td><td class="k"></td><td>Nome no evento de origem, para auditoria</td></tr>
-          <tr><td class="c">DES_GRUPO_CATEGORIA</td><td class="t">VARCHAR2(50)</td><td class="k">NN</td><td>Agrupamento funcional, do campo Class</td></tr>
-          <tr><td class="c">STA_CATEGORIA_ESCOPO</td><td class="t">NUMBER(1)</td><td class="k">NN · CK 0/1 · padrão 0</td><td>1 para as cinco categorias do escopo do projeto</td></tr>
+          <tr><td class="c"><span class="pk">PK</span>COD_CATEGORIA</td><td>chave substituta</td></tr>
+          <tr><td class="c">DES_CATEGORIA_CANONICA</td><td>nome padronizado</td></tr>
+          <tr><td class="c">DES_CATEGORIA_ORIGINAL</td><td>nome na origem</td></tr>
+          <tr><td class="c">DES_GRUPO_CATEGORIA</td><td>grupo (Class)</td></tr>
+          <tr class="hl"><td class="c">STA_CATEGORIA_ESCOPO</td><td>1 se no escopo</td></tr>
         </tbody>
       </table>
     </div>
-    <div class="tbl">
-      <table class="compact">
-        <thead><tr><th style="width:24%">DIM_EVENTO_PREMIACAO <span class="gold">EVT</span></th><th style="width:13%">Tipo</th><th style="width:20%">Restrições</th><th>Descrição · exclusiva da fato precursora</th></tr></thead>
+    <div class="stack-s">
+      <p class="ddt"><code>DIM_EVENTO_PREMIACAO</code> <span class="gold">EVT</span></p>
+      <p class="micro">Só da fato precursora.</p>
+      <table class="compact dd dd-narrow">
         <tbody>
-          <tr><td class="c"><span class="pk">PK</span>COD_EVENTO</td><td class="t">NUMBER(10)</td><td class="k">padrão SEQ_DIM_EVENTO_PREMIACAO</td><td>Chave substituta · −1 = não aplicável</td></tr>
-          <tr><td class="c">COD_EVENTO_IMDB</td><td class="t">VARCHAR2(15)</td><td class="k">NN</td><td>Identificador do evento no IMDb</td></tr>
-          <tr><td class="c">NOM_EVENTO</td><td class="t">VARCHAR2(100)</td><td class="k">NN</td><td>Nome do evento</td></tr>
-          <tr><td class="c">STA_PRECURSOR</td><td class="t">NUMBER(1)</td><td class="k">NN · CK 0/1 · padrão 1</td><td>0 para o próprio Academy Awards (validação cruzada); 1 para os demais</td></tr>
+          <tr><td class="c"><span class="pk">PK</span>COD_EVENTO</td><td>chave substituta</td></tr>
+          <tr><td class="c">COD_EVENTO_IMDB</td><td>ID no IMDb</td></tr>
+          <tr><td class="c">NOM_EVENTO</td><td>nome do evento</td></tr>
+          <tr><td class="c">STA_PRECURSOR</td><td>0 para o próprio Oscar</td></tr>
         </tbody>
       </table>
     </div>
   </div>
+  <p class="small">Toda dimensão tem uma linha <b class="strong">−1 “não aplicável”</b>, para que nenhuma indicação fique sem par nas fatos.</p>
 </section>
 
 <!-- ===================== ENCERRAMENTO ===================== -->
@@ -1492,8 +1325,6 @@ tr.hl td{background:var(--gold-wash)}
 .qs td{padding-block:calc(var(--u)*.72);vertical-align:baseline}
 .qs td.qn{width:calc(var(--u)*4.2);font-family:var(--f-display);font-stretch:80%;font-weight:820;font-size:calc(var(--u)*2.2);color:var(--gold);line-height:1;padding-left:0}
 .qs td.k{width:calc(var(--u)*11);text-align:right;padding-right:0}
-.prec td{vertical-align:middle}
-.prec .bars{--lw:0px}
 </style>
 
 <script>
@@ -1529,7 +1360,7 @@ tr.hl td{background:var(--gold-wash)}
   // Atalhos entre slides de um mesmo grupo (bases e dicionário do DW)
   var groups = {
     bases: [['base-oscar','The Oscar Award'],['base-imdb','Film Awards'],['base-tmdb','TMDB'],['base-demog','Demographics']],
-    dd: [['dd-fio','FIO'],['dd-fip','FIP'],['dd-flm','FLM'],['dd-pss','PSS'],['dd-outras','TMP · CAT · EVT']]
+    dd: [['dd-fatos','FIO · FIP'],['dd-dims','FLM · PSS'],['dd-outras','TMP · CAT · EVT']]
   };
   document.querySelectorAll('[data-jump-group]').forEach(function(wrap){
     var own = wrap.closest('.slide').id;
@@ -1540,18 +1371,6 @@ tr.hl td{background:var(--gold-wash)}
       if (pair[0] === own) b.setAttribute('aria-current', 'true');
       b.addEventListener('click', function(){ go(indexOfId(pair[0])); });
       wrap.appendChild(b);
-    });
-  });
-
-  // Mostrar/ocultar campos não usados nos dicionários das bases
-  document.querySelectorAll('[data-toggle-all]').forEach(function(btn){
-    var table = document.getElementById(btn.getAttribute('aria-controls'));
-    var k = table.querySelectorAll('tr[data-uso="nao"]').length;
-    btn.addEventListener('click', function(){
-      var on = btn.getAttribute('aria-pressed') !== 'true';
-      btn.setAttribute('aria-pressed', String(on));
-      table.classList.toggle('show-all', on);
-      btn.textContent = on ? 'Ocultar não usados' : 'Mostrar não usados (' + k + ')';
     });
   });
 
